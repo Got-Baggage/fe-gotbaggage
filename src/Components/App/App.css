@@ -1,38 +1,95 @@
+/* html{
+  height: 100%;
+  width:100%; 
+} */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  height: 100%;
+  width: 100%;
   align-items: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.nav-logo {
+  height: auto;
+  width: 40%;
+}
+
+.image-container,
+.button-container {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+/* .button-container {
+  display: flex;
+  width: 100%;
+} */
+
+.homepage-button {
+  align-self: center;
+  background-color: white;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  border-color: #53868f;
+  box-sizing: border-box;
+  color: #53868f;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-left: 10%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.homepage-button:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.homepage-button:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
+@media(min-width: 300px) and (max-width:760px) {
+  html{
+    height: 100%;
+    width:100%; 
   }
-  to {
-    transform: rotate(360deg);
+
+  .homepage-logo {
+    height: auto;
+    width: 100%;
   }
+
+  .image-container,
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+  }
+
+
 }
