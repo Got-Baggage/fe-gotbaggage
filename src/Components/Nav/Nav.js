@@ -1,10 +1,10 @@
 import React from "react";
 
-
-
 function Nav() {
   return (
-    <div>Nav</div>
+    <div className="nav">
+      <img src='/images/baggageLogo.png' /> 
+    </div>
   )
 }
 
