@@ -11,7 +11,7 @@ function Form() {
   }
 
   return (
-    <div>
+    <div className="form-view">
       <Nav />
       <div className='question-container'>
           <Questions submitAnswer={submitAnswer} /> 
