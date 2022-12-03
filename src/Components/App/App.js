@@ -22,7 +22,7 @@ function App() {
           render={() => <Form />}
         />
         <Route 
-          path="/trips"
+          path="/listcontainer"
           render={() => <ListContainer />}
         />
         <Route 
