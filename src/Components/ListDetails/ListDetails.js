@@ -1,5 +1,6 @@
 import { useState, React } from 'react'
 import { mockData } from '../../questionsData'
+import Nav from '../Nav/Nav'
 
 function ListDetails({ userTrips }) {
     let [essentialData, setEssentialData] = useState(mockData.data.essentialItems)
@@ -23,11 +24,13 @@ const returnedCategories = () => {
 }
 
   return (
-    <div>
-        <h1>Hello</h1>
-        <h2>{returnedEssentials()}</h2>
-        <h2>{returnedCategories()}</h2>
-    </div>
+    <section className="list-details-view">
+        <Nav />
+        <div>
+            <h2>{returnedEssentials()}</h2>
+            <h2>{returnedCategories()}</h2>
+        </div>
+    </section>
   )
 }
 

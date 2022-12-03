@@ -2,10 +2,12 @@ import React from 'react'
 import { useState } from 'react'
 // import Nav from '../Nav/Nav'
 import { questionsData } from '../../questionsData'
+import { useHistory } from 'react-router-dom'
 
 function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
   let [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   let [currentResponse, setCurrentResponse] = useState("")
+  let history = useHistory()
 
   const goBack = (e) => {
     e.preventDefault()
@@ -27,6 +29,7 @@ function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
       //eventually go to post function
       submitAnswer(currentResponse)
       submitForm()
+      history.push('/tripcontainer')
     } else {
       submitAnswer(currentResponse)
       let questionIndexCopy = currentQuestionIndex

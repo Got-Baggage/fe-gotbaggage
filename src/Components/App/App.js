@@ -20,22 +20,21 @@ function App() {
     <div className="App">
       <Switch>
         <Route
-          exact
-          path="/"
+          exact path="/"
           render={() => <HomePage/>}
         />
         <Route
           path="/form"
           render={() => <Form addUserTrip={addUserTrip} />}
         />
-        <Route 
-          path="/tripdetails"
-          render={() => <ListDetails />}
-        />
         <Route
           path="/tripcontainer"
           render={() => <TripContainer userTrips={userTrips} />}>
         </Route>
+        <Route 
+          exact path="/:id"
+          render={({ match }) => <ListDetails tripList={match.params.id}/>}
+        />
       </Switch>
     </div>
   );
