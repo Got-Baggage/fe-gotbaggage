@@ -12,6 +12,7 @@ function Question({ submitAnswer, removeAnswer, responses }) {
     let questionIndexCopy = currentQuestionIndex
     questionIndexCopy--
     setCurrentQuestionIndex(questionIndexCopy)
+    setCurrentResponse(responses[responses.length-1])
     changeAnswer()
   }
 
@@ -41,6 +42,12 @@ function Question({ submitAnswer, removeAnswer, responses }) {
     }
   }
 
+  const checkInput = () => {
+    if(!currentResponse) {
+      return true
+    }
+  }
+
   const replaceQuestion = () => {
     if(currentQuestionIndex === 2) {
       return (
@@ -51,7 +58,7 @@ function Question({ submitAnswer, removeAnswer, responses }) {
           </select>
           <div className="button-container">
             <button className='back-button' onClick={(e) => { goBack(e) }}> Back </button>
-            <button className='submit-button' onClick={(e) => { handleSubmit(e) }}> Submit </button>
+            <button className='submit-button' disabled={checkInput()} onClick={(e) => { handleSubmit(e) }}> Submit </button>
           </div>
         </div>
       )
@@ -62,7 +69,7 @@ function Question({ submitAnswer, removeAnswer, responses }) {
         <input type="text" value={currentResponse} onChange={(e) => { setCurrentResponse(e.target.value) }}></input>
         <div className="button-container">
           <button className='back-button' disabled={checkIndex()} onClick={(e) => { goBack(e) }}> Back </button>
-          <button className='submit-button' onClick={(e) => { handleSubmit(e) }}> Next </button>
+          <button className='submit-button' disabled={checkInput()} onClick={(e) => { handleSubmit(e) }}> Next </button>
         </div>
     </div>
       )
