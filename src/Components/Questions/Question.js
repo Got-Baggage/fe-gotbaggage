@@ -7,10 +7,10 @@ function Question({ submitAnswer }) {
   let [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   let [currentResponse, setCurrentResponse] = useState("")
 
-  const handleClick = (e) => {
-    e.preventDefault()
-    submitAnswer()
-  }
+  // const handleClick = (e) => {
+  //   e.preventDefault()
+  //   submitAnswer()
+  // }
 
   const handleSubmit = (e) => {
     e.preventDefault()
