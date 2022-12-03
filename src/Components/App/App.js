@@ -2,7 +2,7 @@
 import { Route, Switch } from 'react-router-dom';
 import Form from '../Form/Form';
 import HomePage from '../HomePage/HomePage';
-import ListContainer from '../ListContainer/ListContainer';
+import TripContainer from '../TripContainer/TripContainer';
 import ListDetails from '../ListDetails/ListDetails';
 // import Nav from '../Nav/Nav';
 // import Questions from '../Questions/Question';
@@ -33,8 +33,8 @@ function App() {
           render={() => <ListDetails />}
         />
         <Route
-          path="/listcontainer"
-          render={() => <ListContainer userTrips={userTrips} />}>
+          path="/tripcontainer"
+          render={() => <TripContainer userTrips={userTrips} />}>
         </Route>
       </Switch>
     </div>
