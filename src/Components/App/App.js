@@ -2,6 +2,8 @@
 import { Route, Switch } from 'react-router-dom';
 import Form from '../Form/Form';
 import HomePage from '../HomePage/HomePage';
+import ListContainer from '../ListContainer/ListContainer';
+import ListDetails from '../ListDetails/ListDetails';
 // import Nav from '../Nav/Nav';
 // import Questions from '../Questions/Question';
 import './App.css';
@@ -27,6 +29,10 @@ console.log(userTrips)
         <Route
           path="/form"
           render={() => <Form addUserTrip={addUserTrip} />}
+        />
+        <Route 
+          path="/tripdetails"
+          render={() => <ListDetails />}
         />
         <Route
           path="/listcontainer"
