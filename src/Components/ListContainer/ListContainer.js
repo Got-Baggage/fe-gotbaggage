@@ -1,15 +1,8 @@
-import { useState, React } from 'react'
-import { mockData } from '../../questionsData'
+import React from 'react'
 
 function ListContainer() {
-    let [listData, setListData] = useState([])
-    
-const setData = () => {
-    setListData(mockData)
-    console.log(listData)
-}
   return (
-    <div>{setData()}</div>
+    <div>ListContainer</div>
   )
 }
 
