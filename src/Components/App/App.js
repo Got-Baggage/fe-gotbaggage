@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Form from '../Form/Form';
 import HomePage from '../HomePage/HomePage';
 import ListContainer from '../ListContainer/ListContainer';
+import ListDetails from '../ListDetails/ListDetails';
 // import Nav from '../Nav/Nav';
 // import Questions from '../Questions/Question';
 import './App.css';
@@ -21,8 +22,12 @@ function App() {
           render={() => <Form />}
         />
         <Route 
-          path="/listcontainer"
+          path="/trips"
           render={() => <ListContainer />}
+        />
+        <Route 
+          path="/tripdetails"
+          render={() => <ListDetails />}
         />
       </Switch>
     </div>

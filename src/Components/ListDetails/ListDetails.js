@@ -16,10 +16,17 @@ const returnedEssentials = () => {
     return item.name
 })
 }
+const returnedCategories = () => {
+    return categoryData.map(item => {
+        return item.name
+    })
+}
+
   return (
     <div>
         <h1>Hello</h1>
         <h2>{returnedEssentials()}</h2>
+        <h2>{returnedCategories()}</h2>
     </div>
   )
 }
