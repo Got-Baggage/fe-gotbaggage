@@ -38,6 +38,10 @@
   width: 100vw;
 }
 
+.list-details-view {
+  width: 100vw;
+}
+
 input, 
 select {
   font-family: 'Quicksand', sans-serif;
@@ -130,6 +134,20 @@ select:focus {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
 }
 
+.trip-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: space-around;
+}
+
+.trip-card {
+  border: 2px solid cyan;
+  width: 250px;
+  height: 100px;
+}
+
+
 @media(min-width: 300px) and (max-width:760px) {
   html{
     height: 100%;
@@ -151,6 +169,10 @@ select:focus {
   input,
   select {
     width: 50vw;
+  }
+
+  .trip-container {
+    flex-direction: column;
   }
 
 }

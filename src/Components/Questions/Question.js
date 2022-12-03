@@ -2,10 +2,12 @@ import React from 'react'
 import { useState } from 'react'
 // import Nav from '../Nav/Nav'
 import { questionsData } from '../../questionsData'
+import { useHistory } from 'react-router-dom'
 
 function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
   let [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   let [currentResponse, setCurrentResponse] = useState("")
+  let history = useHistory()
 
   const goBack = (e) => {
     e.preventDefault()
@@ -27,6 +29,7 @@ function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
       //eventually go to post function
       submitAnswer(currentResponse)
       submitForm()
+      history.push('/tripcontainer')
     } else {
       submitAnswer(currentResponse)
       let questionIndexCopy = currentQuestionIndex
@@ -56,7 +59,8 @@ function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
           <h2>{questionsData[currentQuestionIndex]}</h2>
           <select className="dropdown" onChange={(e) => { setCurrentResponse(e.target.value) }}>
             <option value="">Choose one!</option>
-            <option value="beach">Beach</option>
+            <option value="mock">Mock</option>
+            {/* this is going to come out, will enter dynamically from data */}
           </select>
           <div className="button-container">
             <button className='back-button' onClick={(e) => { goBack(e) }}> Back </button>

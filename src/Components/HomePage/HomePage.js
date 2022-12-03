@@ -15,7 +15,7 @@ function HomePage() {
         <Link to="/form">
           <button className="homepage-button">Create Trip</button>
         </Link>
-        <Link to="/listcontainer">
+        <Link to="/tripcontainer">
           <button className="homepage-button">Packing List</button>
         </Link>
       </div>
