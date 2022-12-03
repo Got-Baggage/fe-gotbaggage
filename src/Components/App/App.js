@@ -8,7 +8,6 @@ import ListDetails from '../ListDetails/ListDetails';
 // import Questions from '../Questions/Question';
 import './App.css';
 import { useState } from 'react'
-import ListContainer from '../ListContainer/ListContainer'
 
 function App() {
   let [userTrips, setUserTrips] = useState([])
@@ -17,7 +16,6 @@ function App() {
     setUserTrips([...userTrips, newTrip])
   }
 
-console.log(userTrips)
   return (
     <div className="App">
       <Switch>
