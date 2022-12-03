@@ -49,8 +49,10 @@ function Question({ submitAnswer, removeAnswer, responses }) {
           <select className="dropdown" onChange={(e) => { setCurrentResponse(e.target.value) }}>
             <option value="">Choose one!</option>
           </select>
-          <button className='back-button' onClick={(e) => { goBack(e) }}> Back </button>
-          <button className='submit-button' onClick={(e) => { handleSubmit(e) }}> Submit </button>
+          <div className="button-container">
+            <button className='back-button' onClick={(e) => { goBack(e) }}> Back </button>
+            <button className='submit-button' onClick={(e) => { handleSubmit(e) }}> Submit </button>
+          </div>
         </div>
       )
     } else {
@@ -58,8 +60,10 @@ function Question({ submitAnswer, removeAnswer, responses }) {
       <div className='question-container'>
         <h2>{questionsData[currentQuestionIndex]}</h2>
         <input type="text" value={currentResponse} onChange={(e) => { setCurrentResponse(e.target.value) }}></input>
-        <button className='back-button' disabled={checkIndex()} onClick={(e) => { goBack(e) }}> Back </button>
-        <button className='submit-button' onClick={(e) => { handleSubmit(e) }}> Next </button>
+        <div className="button-container">
+          <button className='back-button' disabled={checkIndex()} onClick={(e) => { goBack(e) }}> Back </button>
+          <button className='submit-button' onClick={(e) => { handleSubmit(e) }}> Next </button>
+        </div>
     </div>
       )
     }

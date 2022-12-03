@@ -69,11 +69,15 @@ select:focus {
 .homepage-button{
   margin-left: 10%;
 }
-.submit-button{
+.submit-button, 
+.back-button {
   margin-top: 10%;
+  margin-left: 10%;
 }
 
-.homepage-button,.submit-button {
+.homepage-button,
+.submit-button, 
+.back-button {
   align-self: center;
   background-color: white;
   background-image: none;
