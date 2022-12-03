@@ -3,7 +3,7 @@ import { useState } from 'react'
 // import Nav from '../Nav/Nav'
 import { questionsData } from '../../questionsData'
 
-function Question({ submitAnswer, removeAnswer, responses }) {
+function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
   let [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   let [currentResponse, setCurrentResponse] = useState("")
 
@@ -26,6 +26,7 @@ function Question({ submitAnswer, removeAnswer, responses }) {
     if(currentQuestionIndex === 2) {
       //eventually go to post function
       submitAnswer(currentResponse)
+      submitForm()
     } else {
       submitAnswer(currentResponse)
       let questionIndexCopy = currentQuestionIndex
@@ -55,6 +56,7 @@ function Question({ submitAnswer, removeAnswer, responses }) {
           <h2>{questionsData[currentQuestionIndex]}</h2>
           <select className="dropdown" onChange={(e) => { setCurrentResponse(e.target.value) }}>
             <option value="">Choose one!</option>
+            <option value="beach">Beach</option>
           </select>
           <div className="button-container">
             <button className='back-button' onClick={(e) => { goBack(e) }}> Back </button>
