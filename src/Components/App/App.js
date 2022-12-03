@@ -1,9 +1,9 @@
 
-import { Link, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Form from '../Form/Form';
 import HomePage from '../HomePage/HomePage';
-import Nav from '../Nav/Nav';
-import Questions from '../Questions/Question';
+// import Nav from '../Nav/Nav';
+// import Questions from '../Questions/Question';
 import './App.css';
 
 function App() {
