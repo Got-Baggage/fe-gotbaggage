@@ -69,11 +69,25 @@ select:focus {
 .homepage-button{
   margin-left: 10%;
 }
-.submit-button{
+.submit-button, 
+.back-button {
   margin-top: 10%;
+  margin-left: 10%;
+  width: 5rem;
 }
 
-.homepage-button,.submit-button {
+.submit-button:disabled,
+.back-button:disabled {
+  font-style: italic;
+  opacity: 50%;
+  cursor: unset;
+  box-shadow: unset !important;
+  transform: none !important;
+}
+
+.homepage-button,
+.submit-button, 
+.back-button {
   align-self: center;
   background-color: white;
   background-image: none;
@@ -104,12 +118,15 @@ select:focus {
   touch-action: manipulation;
 }
 
-.homepage-button, .submit-button:hover {
+.homepage-button, 
+.submit-button:hover,
+.back-button:hover {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
   transform: translate3d(0, 2px, 0);
 }
 
-.homepage-button, .submit-button:focus {
+.homepage-button, 
+.submit-button:focus {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
 }
 

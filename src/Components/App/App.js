@@ -7,8 +7,17 @@ import ListDetails from '../ListDetails/ListDetails';
 // import Nav from '../Nav/Nav';
 // import Questions from '../Questions/Question';
 import './App.css';
+import { useState } from 'react'
+import ListContainer from '../ListContainer/ListContainer'
 
 function App() {
+  let [userTrips, setUserTrips] = useState([])
+
+  let addUserTrip = (newTrip) => {
+    setUserTrips([...userTrips, newTrip])
+  }
+
+console.log(userTrips)
   return (
     <div className="App">
       <Switch>
@@ -19,16 +28,16 @@ function App() {
         />
         <Route
           path="/form"
-          render={() => <Form />}
-        />
-        <Route 
-          path="/listcontainer"
-          render={() => <ListContainer />}
+          render={() => <Form addUserTrip={addUserTrip} />}
         />
         <Route 
           path="/tripdetails"
           render={() => <ListDetails />}
         />
+        <Route
+          path="/listcontainer"
+          render={() => <ListContainer userTrips={userTrips} />}>
+        </Route>
       </Switch>
     </div>
   );
