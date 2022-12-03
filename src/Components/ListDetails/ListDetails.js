@@ -1,7 +1,7 @@
 import { useState, React } from 'react'
 import { mockData } from '../../questionsData'
 
-function ListDetails() {
+function ListDetails({ userTrips }) {
     let [essentialData, setEssentialData] = useState(mockData.data.essentialItems)
     //update the useState to empty array once we receive data? 
     let [categoryData, setCategoryData] = useState(mockData.data.itemsByCategory)

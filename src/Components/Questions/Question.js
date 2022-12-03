@@ -56,7 +56,8 @@ function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
           <h2>{questionsData[currentQuestionIndex]}</h2>
           <select className="dropdown" onChange={(e) => { setCurrentResponse(e.target.value) }}>
             <option value="">Choose one!</option>
-            <option value="beach">Beach</option>
+            <option value="mock">Mock</option>
+            {/* this is going to come out, will enter dynamically from data */}
           </select>
           <div className="button-container">
             <button className='back-button' onClick={(e) => { goBack(e) }}> Back </button>
