@@ -1,27 +1,25 @@
 
-import { Link } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
+import Form from '../Form/Form';
+import HomePage from '../HomePage/HomePage';
 import Nav from '../Nav/Nav';
+import Questions from '../Questions/Question';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      {/* <Nav /> */}
-      <div className="image-container">
-        <img
-          className="homepage-logo"
-          src="/images/baggageLogo2.png"
-          alt="suitcase logo"
+      <Switch>
+        <Route
+          exact
+          path="/"
+          render={() => <HomePage/>}
         />
-      </div>
-      <div className="button-container">
-        <Link to="/">
-          <button className="homepage-button">Create Trip</button>
-        </Link>
-        <Link to="/">
-          <button className="homepage-button">Packing List</button>
-        </Link>
-      </div>
+        <Route
+          path="/form"
+          render={() => <Form />}
+        />
+      </Switch>
     </div>
   );
 }
