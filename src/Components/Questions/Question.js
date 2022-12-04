@@ -2,12 +2,12 @@ import React from 'react'
 import { useState } from 'react'
 // import Nav from '../Nav/Nav'
 import { questionsData } from '../../questionsData'
-import { useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
   let [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   let [currentResponse, setCurrentResponse] = useState("")
-  let history = useHistory()
+  let [confirmationMsg, setConfirmationMsg] = useState("")
 
   const goBack = (e) => {
     e.preventDefault()
@@ -29,7 +29,7 @@ function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
       //eventually go to post function
       submitAnswer(currentResponse)
       submitForm()
-      history.push('/tripcontainer')
+      setConfirmationMsg("Your trip was submitted!")
     } else {
       submitAnswer(currentResponse)
       let questionIndexCopy = currentQuestionIndex
@@ -52,7 +52,7 @@ function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
     }
   }
 
-  const replaceQuestion = () => {
+  const renderQuestions = () => {
     if(currentQuestionIndex === 2) {
       return (
         <div className='question-container'>
@@ -81,9 +81,24 @@ function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
       )
     }
   }
-  return (
-    <form>{ replaceQuestion() }</form>
 
+  const renderQuestionsOrConfirmationMsg = () => {
+    if(!confirmationMsg) {
+      return renderQuestions() 
+    } else {
+      return (
+        <div className="successful-submit-container">
+          <h3>{ confirmationMsg }</h3>
+          <Link to="/tripcontainer">
+            <button className="view-trips-button">View My Trips</button>
+          </Link>
+        </div>
+      )
+    }
+  }
+
+  return (
+    <form>{ renderQuestionsOrConfirmationMsg() }</form>
   )
 }
 

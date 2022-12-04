@@ -1,8 +1,8 @@
 import React from 'react'
 import Nav from '../Nav/Nav';
 import Questions from '../Questions/Question';
-import {useState} from 'react';
-import {mockData} from '../../questionsData'
+import { useState } from 'react';
+import { mockData } from '../../questionsData'
 
 function Form({ addUserTrip }) {
   const [responses, setResponses] = useState([])

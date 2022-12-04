@@ -17,6 +17,8 @@ function App() {
     setUserTrips([...userTrips, newTrip])
   }
 
+
+
   return (
     <div className="App">
       <Switch>
@@ -34,7 +36,7 @@ function App() {
         </Route>
         <Route 
           exact path="/list/:id"
-          render={({ match }) => <ListDetails tripList={match.params.id}/>}
+          render={({ match }) => <ListDetails tripId={match.params.id}/>}
         />
         <Route
           path="*"

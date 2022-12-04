@@ -1,12 +1,16 @@
-import { useState, React } from 'react'
+import { useState, useEffect } from 'react'
 import { mockData } from '../../questionsData'
 import Nav from '../Nav/Nav'
 
-function ListDetails({ userTrips }) {
+function ListDetails({ tripId }) {
     let [essentialData, setEssentialData] = useState(mockData.data.essentialItems)
     //update the useState to empty array once we receive data? 
     let [categoryData, setCategoryData] = useState(mockData.data.itemsByCategory)
     
+//will need to write useEffect hook to request this specific list from API and render it. In hook, set 
+//the state. Have a conditional render that says if state is empty (i.e., bad ID in url OR nothing returned from
+//API call), either render an error msg or useHistory hook to send user to ErrorPage
+
 // const setData = () => {
 //     setListData([...essentialData, mockData])
 //     console.log(listData)
