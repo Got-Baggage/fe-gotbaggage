@@ -70,11 +70,11 @@ select:focus {
   display: flex;
   width: 100%;
 } */
-.homepage-button{
+.homepage-button {
   margin-left: 10%;
 }
 .submit-button, 
-.back-button {
+.back-button{
   margin-top: 10%;
   margin-left: 10%;
   width: 5rem;
@@ -96,8 +96,10 @@ select:focus {
 
 .homepage-button,
 .submit-button, 
+.edit-button,
 .back-button,
-.view-trips-button {
+.view-trips-button,
+.add-button {
   align-self: center;
   background-color: white;
   background-image: none;
@@ -130,7 +132,8 @@ select:focus {
 
 .homepage-button, 
 .submit-button:hover,
-.back-button:hover {
+.back-button:hover,  .edit-button:hover,
+ .add-button:hover {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
   transform: translate3d(0, 2px, 0);
 }
@@ -140,17 +143,72 @@ select:focus {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
 }
 
+
+/******* List Card CSS ********/
+
 .trip-container {
   display: flex;
   width: 100vw;
   height: 100vh;
   justify-content: space-around;
+  align-items: center;
 }
 
 .trip-card {
-  border: 2px solid cyan;
+font-family: 'Quicksand', sans-serif;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  background-color: white;
+  border-color: #53868f;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  padding: .75rem;  
+  border-style: solid; 
   width: 250px;
-  height: 100px;
+  height: 100px;  
+}
+
+a:link {
+text-decoration: none;
+}
+
+a:visited{
+  color: black;
+}
+
+.listed-items{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+ul {
+  margin: 8px 0px;
+  padding-left: 8px;
+}
+
+.essential-items{
+  display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+label, ul{
+display: flex;
+}
+
+.list-checkbox{
+  width:2vw;
+}
+
+.list-buttons{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.add-button{
+  margin-left: 2%;
 }
 
 
@@ -180,5 +238,10 @@ select:focus {
   .trip-container {
     flex-direction: column;
   }
+
+    .list-checkbox {
+      width: 7vw;
+    }
+
 
 }
