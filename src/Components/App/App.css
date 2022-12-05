@@ -79,6 +79,11 @@ select:focus {
   margin-left: 10%;
   width: 5rem;
 }
+.successful-submit-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .submit-button:disabled,
 .back-button:disabled {
@@ -91,7 +96,10 @@ select:focus {
 
 .homepage-button,
 .submit-button, 
-.back-button, .edit-button, .add-button {
+.edit-button,
+.back-button,
+.view-trips-button,
+.add-button {
   align-self: center;
   background-color: white;
   background-image: none;

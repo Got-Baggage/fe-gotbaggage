@@ -1,6 +1,7 @@
 
 import { Route, Switch } from 'react-router-dom';
 import Form from '../Form/Form';
+import ErrorPage from '../ErrorPage/ErrorPage';
 import HomePage from '../HomePage/HomePage';
 import TripContainer from '../TripContainer/TripContainer';
 import ListDetails from '../ListDetails/ListDetails';
@@ -15,6 +16,8 @@ function App() {
   let addUserTrip = (newTrip) => {
     setUserTrips([...userTrips, newTrip])
   }
+
+
 
   return (
     <div className="App">
@@ -32,8 +35,12 @@ function App() {
           render={() => <TripContainer userTrips={userTrips} />}>
         </Route>
         <Route 
-          exact path="/:id"
-          render={({ match }) => <ListDetails tripList={match.params.id}/>}
+          exact path="/list/:id"
+          render={({ match }) => <ListDetails tripId={match.params.id}/>}
+        />
+        <Route
+          path="*"
+          render={() => <ErrorPage />}
         />
       </Switch>
     </div>

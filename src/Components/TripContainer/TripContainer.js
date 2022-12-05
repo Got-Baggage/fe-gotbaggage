@@ -3,7 +3,6 @@ import TripCard from '../TripCard/TripCard'
 import Nav from '../Nav/Nav'
 
 function TripContainer({ userTrips }) {
-  console.log(userTrips)
   const cards = userTrips.map(trip => {
     return (
       <TripCard 
