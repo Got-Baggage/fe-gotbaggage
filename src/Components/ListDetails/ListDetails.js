@@ -14,24 +14,42 @@ function ListDetails({ userTrips }) {
 
 const returnedEssentials = () => {
     return essentialData.map(item => {
-    return item.name
+    return (
+      <label>
+        <input type="checkbox" className="list-checkbox" />
+        <ul>{item.name}</ul>
+      </label>
+    );
 })
 }
 const returnedCategories = () => {
     return categoryData.map(item => {
-        return item.name
+        return (
+          <label>
+            <input type="checkbox" className="list-checkbox" />
+            <ul>{item.name}</ul>
+          </label>
+        );
     })
 }
 
   return (
     <section className="list-details-view">
-        <Nav />
-        <div>
-            <h2>{returnedEssentials()}</h2>
-            <h2>{returnedCategories()}</h2>
+      <Nav />
+      <div className="list-buttons">
+        <button className="edit-button">Edit</button>
+        <button className="add-button">Add Item</button>
+      </div>
+      <div className="listed-items">
+        <h1>Essential Items:</h1>
+        <div className="essential-items">
+          <p>{returnedEssentials()}</p>
         </div>
+        <h1>Activity Items:</h1>
+        <p>{returnedCategories()}</p>
+      </div>
     </section>
-  )
+  );
 }
 
 export default ListDetails
