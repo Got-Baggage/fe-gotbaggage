@@ -1,0 +1,39 @@
+import React from 'react'
+import { gql, useQuery } from "@apollo/client";
+
+const GET_ESSENTIALS = gql`
+{
+    essentialItems{
+      name
+    }
+    itemsByCategory(category: 3)
+    {
+        name
+      }
+}
+`
+
+// const TRIP_CREATE = gql `{
+//     tripCreate(input: {name: "Baggage Trip", category: 3, traveler: "Stephen"})
+//     {
+//       trip: {
+//         name
+//         category
+//         traveler
+//         image
+//       }
+//     }
+//   }
+//   `;
+
+//   export const newTrip = () => {
+//     const { data, error, loading } = useQuery(TRIP_CREATE);
+  
+//     return { data, error, loading };
+//   }
+
+  export const GetEssentials = () => {
+    const { data, error, loading } = useQuery(GET_ESSENTIALS);
+  
+    return { data, error, loading };
+  }
