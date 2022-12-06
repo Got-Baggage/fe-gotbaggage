@@ -32,7 +32,6 @@ const returnedCategories = () => {
     return categoryData.map(item => {
         return (
           <div>
-           
           <label>
             <input type="checkbox" className="list-checkbox" />
             <ul>{item.name}</ul>
