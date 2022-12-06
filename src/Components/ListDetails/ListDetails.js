@@ -27,8 +27,8 @@ const returnedEssentials = () => {
     );
 })
 }
+console.log(data.essentialItems)
 const returnedCategories = () => {
-  console.log(data.essentialItems)
     return categoryData.map(item => {
         return (
           <div>
