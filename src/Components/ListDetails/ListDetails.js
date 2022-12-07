@@ -4,10 +4,13 @@ import Nav from '../Nav/Nav'
 import { GetEssentials } from '../../queries'
 
 function ListDetails({ tripId }) {
-    let [essentialData, setEssentialData] = useState(mockData.data.essentialItems)
+    let [essentialData, setEssentialData] = useState([])
     //update the useState to empty array once we receive data? 
     let [categoryData, setCategoryData] = useState(mockData.data.itemsByCategory)
-    let {data, error, loading} = GetEssentials()
+    let { data, error, loading } = GetEssentials()
+    // useEffect(() => { setEssentialData(data.essentialItems) })
+
+
 //will need to write useEffect hook to request this specific list from API and render it. In hook, set 
 //the state. Have a conditional render that says if state is empty (i.e., bad ID in url OR nothing returned from
 //API call), either render an error msg or useHistory hook to send user to ErrorPage
@@ -16,9 +19,11 @@ function ListDetails({ tripId }) {
 //     setListData([...essentialData, mockData])
 //     console.log(listData)
 // }
+// const setData = setEssentialData(data)
 
+  
 const returnedEssentials = () => {
-    return essentialData.map(item => {
+    return data.essentialItems.map(item => {
     return (
       <label>
         <input type="checkbox" className="list-checkbox" />
@@ -27,14 +32,14 @@ const returnedEssentials = () => {
     );
 })
 }
-console.log(data.essentialItems)
+console.log('list details', data)
 const returnedCategories = () => {
-    return categoryData.map(item => {
+    return data.itemsByCategory.map(item => {
         return (
           <div>
           <label>
             <input type="checkbox" className="list-checkbox" />
-            <ul>{item.name}</ul>
+            <ul key={item.id}>{item.name}</ul>
           </label>
           </div>
         );
@@ -51,10 +56,10 @@ const returnedCategories = () => {
       <div className="listed-items">
         <h1>Essential Items:</h1>
         <div className="essential-items">
-          <p>{returnedEssentials()}</p>
+          <div>{returnedEssentials()}</div>
         </div>
         <h1>Activity Items:</h1>
-        <p>{returnedCategories()}</p>
+        <div>{returnedCategories()}</div>
       </div>
     </section>
   );
