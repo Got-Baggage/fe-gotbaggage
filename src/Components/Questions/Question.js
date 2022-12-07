@@ -10,28 +10,17 @@ function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
   let [currentResponse, setCurrentResponse] = useState('');
   let [confirmationMsg, setConfirmationMsg] = useState('');
   let [optionsValue, setOptionsValue] = useState([]);
-
   let { data, error, loading } = GetCategories();
 
-  //  displayOptions = () => {
-  //    const showOption = data.forEach((activity) => {
-  //      let options = document.createElement('OPTION');
-  //      options.setAttribute('value', `${activity}`);
-  //      let genres = document.createTextNode(`${activity}`);
-  //      options.appendChild(activity);
-  //      document.getElementById('mySelect').appendChild(options);
-  //    });
-  //    return showOption;
-  //  };
   const displayOptions = () => {
     console.log(data)
     if (data.loading) {
       return <option disabled> loading activity options</option>;
     } else {
       return data.categoryNames.map((activity) => {
-        console.log(activity);
+        console.log('activity ===>', data.categoryNames.indexOf(activity));
         return (
-          <option key={activity} value={activity}>
+          <option key={activity} value={data.categoryNames.indexOf(activity)}>
             {activity}
           </option>
         );

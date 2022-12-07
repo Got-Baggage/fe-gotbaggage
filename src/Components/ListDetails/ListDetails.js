@@ -22,19 +22,19 @@ function ListDetails({ tripId }) {
 // const setData = setEssentialData(data)
 
   
-// const returnedEssentials = () => {
-//     return data.essentialItems.map(item => {
-//     return (
-//       <label>
-//         <input type="checkbox" className="list-checkbox" />
-//         <ul>{item.name}</ul>
-//       </label>
-//     );
-// })
-// }
-console.log(data)
+const returnedEssentials = () => {
+    return data.essentialItems.map(item => {
+    return (
+      <label>
+        <input type="checkbox" className="list-checkbox" />
+        <ul>{item.name}</ul>
+      </label>
+    );
+})
+}
+console.log('list details', data)
 const returnedCategories = () => {
-    return categoryData.map(item => {
+    return data.itemsByCategory.map(item => {
         return (
           <div>
           <label>
@@ -56,7 +56,7 @@ const returnedCategories = () => {
       <div className="listed-items">
         <h1>Essential Items:</h1>
         <div className="essential-items">
-          {/* <div>{returnedEssentials()}</div> */}
+          <div>{returnedEssentials()}</div>
         </div>
         <h1>Activity Items:</h1>
         <div>{returnedCategories()}</div>
