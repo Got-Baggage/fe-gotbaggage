@@ -12,6 +12,11 @@ const GET_ESSENTIALS = gql`
       }
 }
 `
+const GET_CATEGORIES = gql`
+  query {
+    categoryNames
+  }
+`;
 
 // const TRIP_CREATE = gql `{
 //     tripCreate(input: {name: "Baggage Trip", category: 3, traveler: "Stephen"})
@@ -37,3 +42,7 @@ const GET_ESSENTIALS = gql`
   
     return { data, error, loading };
   }
+  export const GetCategories = () => {
+    const { data, error, loading } = useQuery(GET_CATEGORIES);
+    return { data, error, loading };
+  };

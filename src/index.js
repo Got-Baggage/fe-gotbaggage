@@ -6,8 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
 
+// const client = new ApolloClient({
+//   uri: 'https://e44fa37e-c94e-4d93-8d75-4770f9b6db3c.mock.pstmn.io/graphql',
+//   cache: new InMemoryCache(),
+// });
 const client = new ApolloClient({
-  uri: 'https://e44fa37e-c94e-4d93-8d75-4770f9b6db3c.mock.pstmn.io/graphql',
+  uri: 'https://be-gotbaggage.fly.dev/graphql',
   cache: new InMemoryCache(),
 });
 
