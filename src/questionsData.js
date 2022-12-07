@@ -1,7 +1,7 @@
 export const questionsData = [
-  'What is your trip name?',
+  'What would you like to call this trip? (For example: "January Mexico trip")',
   'Who is this list for?',
-  'What is your activity?'
+  'What type of trip is this?'
 ]
 
 export const mockData = {

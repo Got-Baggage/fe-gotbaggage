@@ -47,7 +47,7 @@ function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
   }
 
   const checkInput = () => {
-    if(!currentResponse) {
+    if(!currentResponse || !currentResponse.trim().length) {
       return true
     }
   }
