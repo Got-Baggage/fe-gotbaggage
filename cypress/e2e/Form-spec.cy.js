@@ -72,11 +72,18 @@ describe('trip creation form error handling', () => {
     cy.get('.submit-button').should('be.disabled')
   })
 
-  it.only('should allow the user to go back and view their response to the previous question', () => {
+  it('should allow the user to go back and view their response to the previous question', () => {
     cy.get('input').type('my test trip')
     cy.get('.submit-button').click()
     cy.get('.back-button').should('be.enabled')
     cy.get('.back-button').click()
     cy.get('input').should('have.value', 'my test trip')
   })
+
+  // it('should not allow a user to submit only spaces to a question', () => {
+  //   cy.get('input').type('     ')
+  //   cy.get('.submit-button').should('be.disabled')
+  // })
+
+  
 })
