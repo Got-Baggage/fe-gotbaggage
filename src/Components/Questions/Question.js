@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { questionsData } from '../../questionsData';
 import { Link } from 'react-router-dom';
 import { GetCategories } from '../../queries';
+import {AddTripMutation} from "../../queries"
 
 function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
   let [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -18,9 +19,8 @@ function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
       return <option disabled> loading activity options</option>;
     } else {
       return data.categoryNames.map((activity) => {
-        console.log('activity ===>', data.categoryNames.indexOf(activity));
         return (
-          <option key={activity} value={data.categoryNames.indexOf(activity)}>
+          <option key={activity} value={activity}>
             {activity}
           </option>
         );
@@ -47,7 +47,7 @@ function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
     if (currentQuestionIndex === 2) {
       //eventually go to post function
       submitAnswer(currentResponse);
-      submitForm();
+      // submitForm();
       setConfirmationMsg('Your trip was submitted!');
     } else {
       submitAnswer(currentResponse);

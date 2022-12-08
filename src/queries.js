@@ -17,14 +17,16 @@ const GET_CATEGORIES = gql`
     categoryNames
   }
 `;
-// const addTripMutation = gql`
-//   mutation tripCreate(input: {$name: String!, $category: Integer!, $traveler: "Stephen"}) {
-//     addBook(name: $name, genre: $genre, authorId: $authorId) {
-//       name
-//       id
-//     }
-//   }
-// `;
+const ADD_TRIP_MUTATION = gql`
+  mutation tripCreate(input: {$name: String!, $category: Integer!, $traveler: String!}) {
+    addBook(name: $name, category: $category,traveler : $traveler) {
+      name
+      id
+      category 
+      traveler
+    }
+  }
+`;
 
 // const TRIP_CREATE = gql `{
 //     tripCreate(input: {name: "Baggage Trip", category: 3, traveler: "Stephen"})
@@ -52,5 +54,10 @@ const GET_CATEGORIES = gql`
   }
   export const GetCategories = () => {
     const { data, error, loading } = useQuery(GET_CATEGORIES);
+    return { data, error, loading };
+  };
+
+  export const AddTripMutation = () => {
+    const { data, error, loading } = useQuery(ADD_TRIP_MUTATION);
     return { data, error, loading };
   };
