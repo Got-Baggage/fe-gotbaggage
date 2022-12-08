@@ -18,8 +18,9 @@ const GET_CATEGORIES = gql`
   }
 `;
 const ADD_TRIP_MUTATION = gql`
-  mutation tripCreate(input: {$name: String!, $category: Integer!, $traveler: String!}) {
-    addBook(name: $name, category: $category,traveler : $traveler) {
+  mutation tripCreate($name: String!, $category: Integer!, $traveler: String!) 
+  {
+    trip {
       name
       id
       category 
