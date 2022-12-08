@@ -60,4 +60,4 @@ const ADD_TRIP_MUTATION = gql`
     return { data, error, loading };
   };
 
-  export {ADD_TRIP_MUTATION}
+ export { ADD_TRIP_MUTATION }

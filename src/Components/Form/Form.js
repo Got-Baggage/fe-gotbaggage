@@ -16,29 +16,29 @@ useEffect(() => {
   }
 }, [responses]);
 
-  // const readyData = () => {
-  //   return {
-  //     id: Date.now(),
-  //     tripName: responses[0],
-  //     traveler: responses[1],
-  //     category: responses[2]
-  //   }
-  // }
+const [createTrip, { data, loading, error }] = useMutation(ADD_TRIP_MUTATION);
 
-  const createTrip = useMutation(ADD_TRIP_MUTATION, {
-    variables: {
+  const readyData = () => {
+    return {
+      variables: {
       name: responses[0],
       traveler: responses[1],
       category: responses[2]
+      }
     }
-  });
+  }
 
-  
-
-
+  // const [createTrip] = useMutation(ADD_TRIP_MUTATION, {
+  //   variables: {
+  //     name: responses[0],
+  //     traveler: responses[1],
+  //     category: responses[2]
+  //   }
+  // });
 
   const submitForm = () => {
-    createTrip()
+    let data = readyData()
+    createTrip({ data })
     //addUserTrip()
   }
 
@@ -65,6 +65,6 @@ useEffect(() => {
   );
 }
 
-export default graphql(createTrip)(Form);
+// export default graphql(createTrip)(Form)
 
-
+export default Form;
