@@ -1,5 +1,5 @@
 import React from 'react'
-import { gql, useQuery } from "@apollo/client";
+import { gql, useQuery, useMutation } from "@apollo/client";
 
 const GET_ESSENTIALS = gql`
 {
@@ -17,17 +17,19 @@ const GET_CATEGORIES = gql`
     categoryNames
   }
 `;
+
 const ADD_TRIP_MUTATION = gql`
-  mutation tripCreate($name: String!, $category: Integer!, $traveler: String!) 
+  mutation tripCreate($name: String!, $category: String!, $traveler: String!) 
   {
-    trip {
+    trip(name: $name, category: $category, traveler: $traveler) {
       name
-      id
       category 
       traveler
+      image
     }
   }
 `;
+
 
 // const TRIP_CREATE = gql `{
 //     tripCreate(input: {name: "Baggage Trip", category: 3, traveler: "Stephen"})
@@ -58,7 +60,4 @@ const ADD_TRIP_MUTATION = gql`
     return { data, error, loading };
   };
 
-  export const AddTripMutation = () => {
-    const { data, error, loading } = useQuery(ADD_TRIP_MUTATION);
-    return { data, error, loading };
-  };
+  export {ADD_TRIP_MUTATION}
