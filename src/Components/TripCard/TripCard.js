@@ -1,16 +1,21 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-function TripCard({tripName, category, traveler, id}) {
+function TripCard({ tripName, category, traveler, id, image }) {
   return (
     <Link to={`/list/${id}`}>
       <article className="trip-card">
-        <h3>{ tripName }</h3>
-        <h3>{ traveler }</h3>
+        <div className='card-details'>
+          <h3 className='card-label'>{traveler}</h3>
+          <h3 className='card-label'>{tripName}</h3>
+        </div>
+        <div className="card-image-container">
+          <img className="card-image" src={image} />
+        </div>
         {/* add images based on categories */}
       </article>
     </Link>
-  )
+  );
 }
 
-export default TripCard
+export default TripCard;

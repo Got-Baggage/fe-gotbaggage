@@ -1,45 +1,85 @@
 import React from 'react'
 import Nav from '../Nav/Nav';
 import Questions from '../Questions/Question';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { mockData } from '../../questionsData'
+import { ADD_TRIP_MUTATION } from '../../queries'
+import { useMutation } from '@apollo/client'
+import { graphql } from 'graphql';
 
 function Form({ addUserTrip }) {
-  const [responses, setResponses] = useState([])
+  const [responses, setResponses] = useState([]);
 
-  const submitAnswer = (response) => {
-    setResponses([...responses, response]) 
+useEffect(() => {
+  if (responses.length === 3) {
+    submitForm();
   }
-
-  const readyData = () => {
-    return {
-      id: Date.now(),
-      tripName: responses[0],
+}, [responses]);
+  
+const [createTrip, { name, category, traveler }] = useMutation(ADD_TRIP_MUTATION);
+  console.log(createTrip)
+  
+const readyData = () => {
+  createTrip({
+    variables: {
+      name: responses[0],
+      category: responses[2],
       traveler: responses[1],
-      category: mockData.data
-      //category: responses[2]
-      //change category when we get JSON data
     }
-  }
+  });
+};
+
+  // const readyData = () => {
+  //   return {
+  //     variables: {
+  //     name: responses[0],
+  //     traveler: responses[1],
+  //     category: responses[2]
+  //       // name: 'Hunter',
+  //       // traveler: 'hunter',
+  //       // category: 'beach'
+  //     }
+  //   }
+  // }
+
+  // const [createTrip] = useMutation(ADD_TRIP_MUTATION, {
+  //   variables: {
+  //     name: responses[0],
+  //     traveler: responses[1],
+  //     category: responses[2]
+  //   }
+  // });
 
   const submitForm = () => {
-    let userData = readyData()
-    addUserTrip(userData)
+    readyData()
+    console.log(responses)
+    // tripCreate()
+    addUserTrip()
   }
+
+  const submitAnswer = (response) => {
+    setResponses([...responses, response]);
+  };
 
   const removeAnswer = (index) => {
-    let responsesCopy = responses
-    responsesCopy.splice(index, 1)
-  }
-
+    let responsesCopy = responses;
+    responsesCopy.splice(index, 1);
+  };
   return (
     <div className="form-view">
       <Nav />
-      <div className='question-container'>
-          <Questions submitAnswer={submitAnswer} removeAnswer={removeAnswer} responses={responses} submitForm={submitForm} /> 
+      <div className="question-container">
+        <Questions
+          submitAnswer={submitAnswer}
+          removeAnswer={removeAnswer}
+          responses={responses}
+          submitForm={submitForm}
+        />
       </div>
     </div>
   );
 }
 
-export default Form
+// export default graphql(createTrip)(Form)
+
+export default Form;

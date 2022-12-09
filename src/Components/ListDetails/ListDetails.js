@@ -4,7 +4,7 @@ import Nav from '../Nav/Nav'
 import { GetEssentials } from '../../queries'
 
 function ListDetails({ tripId }) {
-    let [essentialData, setEssentialData] = useState([])
+    let [essentialData, setEssentialData] = useState(mockData.data.essentialItems)
     //update the useState to empty array once we receive data? 
     let [categoryData, setCategoryData] = useState(mockData.data.itemsByCategory)
     let { data, error, loading } = GetEssentials()
@@ -32,7 +32,7 @@ const returnedEssentials = () => {
     );
 })
 }
-console.log('list details', data)
+
 const returnedCategories = () => {
     return data.itemsByCategory.map(item => {
         return (
