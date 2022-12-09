@@ -2,7 +2,7 @@
 import { gql, useQuery } from '@apollo/client';
 
 const GET_ESSENTIALS = gql`
-  {
+  query {
     essentialItems {
       name
     }
@@ -26,6 +26,14 @@ const GET_CATEGORIES = gql`
 //     }
 //   }
 // `;
+
+const DELETE_TRIP = gql`
+  mutation TripDelete($input: id) {
+      trip(input: $input) {
+        id
+      }
+    }
+  `
 
 const GET_ALL_TRIPS = gql`
   query {
@@ -89,5 +97,7 @@ export const GetAllTrips = () => {
   const { data, error, loading } = useQuery(GET_ALL_TRIPS);
   return { data, error, loading };
 };
+
+export { DELETE_TRIP };
 
 export { ADD_TRIP_MUTATION };
