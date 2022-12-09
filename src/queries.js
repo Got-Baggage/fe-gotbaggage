@@ -53,9 +53,11 @@ const ADD_TRIP_MUTATION = gql`
 // `;
 
 const DELETE_TRIP = gql`
-  mutation TripDelete($input: id) {
-    trip(input: $input) {
-      id
+  mutation TripDelete($id: ID!) {
+    tripDelete(input: {id:$id}) {
+      trip {
+        id
+      }
     }
   }
 `;
