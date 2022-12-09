@@ -1,33 +1,34 @@
-import React from 'react'
+import React from 'react';
 import Nav from '../Nav/Nav';
 import Questions from '../Questions/Question';
 import { useState, useEffect } from 'react';
-import { mockData } from '../../questionsData'
-import { ADD_TRIP_MUTATION } from '../../queries'
-import { useMutation } from '@apollo/client'
+import { mockData } from '../../questionsData';
+import { ADD_TRIP_MUTATION } from '../../queries';
+import { useMutation } from '@apollo/client';
 import { graphql } from 'graphql';
 
 function Form({ addUserTrip }) {
   const [responses, setResponses] = useState([]);
 
-useEffect(() => {
-  if (responses.length === 3) {
-    submitForm();
-  }
-}, [responses]);
-  
-const [createTrip, { name, category, traveler }] = useMutation(ADD_TRIP_MUTATION);
-  console.log(createTrip)
-  
-const readyData = () => {
-  createTrip({
-    variables: {
-      name: responses[0],
-      category: responses[2],
-      traveler: responses[1],
+  useEffect(() => {
+    if (responses.length === 3) {
+      submitForm();
     }
-  });
-};
+  }, [responses]);
+
+  const [tripCreate, { data, loading, error }] =
+    useMutation(ADD_TRIP_MUTATION);
+  console.log(tripCreate);
+
+  const readyData = () => {
+    tripCreate({
+      variables: {
+        name: responses[0],
+        category: responses[2],
+        traveler: responses[1],
+      },
+    });
+  };
 
   // const readyData = () => {
   //   return {
@@ -51,11 +52,11 @@ const readyData = () => {
   // });
 
   const submitForm = () => {
-    readyData()
-    console.log(responses)
+    readyData();
+    console.log(responses);
     // tripCreate()
-    addUserTrip()
-  }
+    addUserTrip();
+  };
 
   const submitAnswer = (response) => {
     setResponses([...responses, response]);

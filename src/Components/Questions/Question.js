@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { questionsData } from '../../questionsData';
 import { Link } from 'react-router-dom';
 import { GetCategories } from '../../queries';
-import {AddTripMutation} from "../../queries"
+import { AddTripMutation } from '../../queries';
 
 function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
   let [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -14,7 +14,7 @@ function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
   let { data, error, loading } = GetCategories();
 
   const displayOptions = () => {
-    console.log(data)
+    console.log(data);
     if (data.loading) {
       return <option disabled> loading activity options</option>;
     } else {

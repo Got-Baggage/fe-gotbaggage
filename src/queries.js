@@ -1,5 +1,5 @@
 // import React from 'react'
-import { gql, useQuery } from '@apollo/client';
+import { gql, useQuery, useMutation } from '@apollo/client';
 
 const GET_ESSENTIALS = gql`
   query {
@@ -18,7 +18,7 @@ const GET_CATEGORIES = gql`
 `;
 
 // const ADD_TRIP_MUTATION = gql`
-//   mutation tripCreate($name: String!, $category: String!, $traveler: String!) {
+//   mutation TripCreate($name: String!, $category: String!, $traveler: String!) {
 //     trip(name: $name, category: $category, traveler: $traveler) {
 //       name
 //       category
@@ -26,14 +26,38 @@ const GET_CATEGORIES = gql`
 //     }
 //   }
 // `;
+const ADD_TRIP_MUTATION = gql`
+  mutation TripCreate($name: String!, $category: String!, $traveler: String!) {
+    tripCreate(
+      input: { name: $name, category: $category, traveler: $traveler }
+    ) {
+      trip {
+        name
+        category
+        image
+      }
+    }
+  }
+`;
+// const ADD_TRIP_MUTATION = gql`
+//   mutation {
+//     tripCreate(input: { name: "Baggage Trip", category: "beach", traveler:"hazel" }) {
+//       trip {
+//         name
+//         category
+//         image
+//       }
+//     }
+//   }
+// `;
 
 const DELETE_TRIP = gql`
   mutation TripDelete($input: id) {
-      trip(input: $input) {
-        id
-      }
+    trip(input: $input) {
+      id
     }
-  `
+  }
+`;
 
 const GET_ALL_TRIPS = gql`
   query {
@@ -43,18 +67,6 @@ const GET_ALL_TRIPS = gql`
       id
       traveler
       image
-    }
-  }
-`;
-
-const ADD_TRIP_MUTATION = gql`
-  mutation {
-    tripCreate(input: { name: "Baggage Trip", category: "beach", traveler:"hazel" }) {
-      trip {
-        name
-        category
-        image
-      }
     }
   }
 `;
