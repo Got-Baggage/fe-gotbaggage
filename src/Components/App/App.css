@@ -11,11 +11,14 @@
   flex-direction: column;
 }
 
-.nav-container,.nav-link  {
+.nav-container,
+.nav-link {
   display: flex;
   justify-content: flex-end;
 }
-
+.nav-container{
+  margin-bottom: 20px;
+}
 .nav-logo {
   height: auto;
   width: 40%;
@@ -26,10 +29,11 @@
   display: flex;
   justify-content: center;
 }
-.question-container{
-  display:flex ;
+
+.question-container {
+  display: flex;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
   height: 60vh;
   justify-content: center;
 }
@@ -42,7 +46,7 @@
   width: 100vw;
 }
 
-input, 
+input,
 select {
   font-family: 'Quicksand', sans-serif;
   border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
@@ -60,7 +64,7 @@ select {
 }
 
 input:focus,
-select:focus { 
+select:focus {
   outline: none !important;
   border-color: #b7990d;
   border-style: solid;
@@ -73,12 +77,14 @@ select:focus {
 .homepage-button {
   margin-left: 10%;
 }
-.submit-button, 
-.back-button{
+
+.submit-button,
+.back-button {
   margin-top: 10%;
   margin-left: 10%;
   width: 5rem;
 }
+
 .successful-submit-container {
   display: flex;
   flex-direction: column;
@@ -95,7 +101,7 @@ select:focus {
 }
 
 .homepage-button,
-.submit-button, 
+.submit-button,
 .edit-button,
 .back-button,
 .view-trips-button,
@@ -130,15 +136,16 @@ select:focus {
   touch-action: manipulation;
 }
 
-.homepage-button, 
+.homepage-button:hover,
 .submit-button:hover,
-.back-button:hover,  .edit-button:hover,
- .add-button:hover {
+.back-button:hover,
+.edit-button:hover,
+.add-button:hover {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
   transform: translate3d(0, 2px, 0);
 }
 
-.homepage-button, 
+.homepage-button,
 .submit-button:focus {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
 }
@@ -152,10 +159,13 @@ select:focus {
   height: 100vh;
   justify-content: space-around;
   align-items: center;
+  margin-top: 150px;
+  gap: 2%;
 }
 
 .trip-card {
-font-family: 'Quicksand', sans-serif;
+  display: flex;
+  font-family: 'Quicksand', sans-serif;
   border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
   background-color: white;
   border-color: #53868f;
@@ -163,59 +173,81 @@ font-family: 'Quicksand', sans-serif;
   border-bottom-right-radius: 225px 15px;
   border-top-left-radius: 255px 15px;
   border-top-right-radius: 15px 225px;
-  padding: .75rem;  
-  border-style: solid; 
+  padding: .75rem;
+  border-style: solid;
   width: 250px;
-  height: 100px;  
+  height: 100px;
 }
 
 a:link {
-text-decoration: none;
+  text-decoration: none;
 }
 
-a:visited{
+a:visited {
   color: black;
 }
 
-.listed-items{
+.listed-items {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
+
 ul {
   margin: 8px 0px;
   padding-left: 8px;
 }
 
-.essential-items{
+.essential-items {
   display: flex;
-    align-items: center;
-    flex-direction: column;
+  align-items: center;
+  flex-direction: column;
 }
 
-label, ul{
-display: flex;
+label,
+ul {
+  display: flex;
 }
 
-.list-checkbox{
-  width:2vw;
+.list-checkbox {
+  width: 2vw;
 }
 
-.list-buttons{
+.list-buttons {
   display: flex;
   justify-content: center;
   margin-top: 10px;
 }
 
-.add-button{
+.add-button {
   margin-left: 2%;
+}
+
+.card-image-container {
+  height: 90px;
+  width: 35%;
+  margin-left: 2%;
+}
+
+.card-image {
+  height: 90px;
+  width: 100%;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-label {
+  margin: 2px;
 }
 
 
 @media(min-width: 300px) and (max-width:760px) {
-  html{
+  html {
     height: 100%;
-    width:100%; 
+    width: 100%;
   }
 
   .homepage-logo {
@@ -237,11 +269,12 @@ display: flex;
 
   .trip-container {
     flex-direction: column;
+    flex-wrap: nowrap;
   }
 
-    .list-checkbox {
-      width: 7vw;
-    }
+  .list-checkbox {
+    width: 7vw;
+  }
 
 
 }

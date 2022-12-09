@@ -15,18 +15,32 @@ useEffect(() => {
     submitForm();
   }
 }, [responses]);
-
-const [createTrip, { data, loading, error }] = useMutation(ADD_TRIP_MUTATION);
-
-  const readyData = () => {
-    return {
-      variables: {
+  
+const [createTrip, { name, category, traveler }] = useMutation(ADD_TRIP_MUTATION);
+  console.log(createTrip)
+  
+const readyData = () => {
+  createTrip({
+    variables: {
       name: responses[0],
+      category: responses[2],
       traveler: responses[1],
-      category: responses[2]
-      }
     }
-  }
+  });
+};
+
+  // const readyData = () => {
+  //   return {
+  //     variables: {
+  //     name: responses[0],
+  //     traveler: responses[1],
+  //     category: responses[2]
+  //       // name: 'Hunter',
+  //       // traveler: 'hunter',
+  //       // category: 'beach'
+  //     }
+  //   }
+  // }
 
   // const [createTrip] = useMutation(ADD_TRIP_MUTATION, {
   //   variables: {
@@ -37,9 +51,10 @@ const [createTrip, { data, loading, error }] = useMutation(ADD_TRIP_MUTATION);
   // });
 
   const submitForm = () => {
-    let data = readyData()
-    createTrip({ data })
-    //addUserTrip()
+    readyData()
+    console.log(responses)
+    // tripCreate()
+    addUserTrip()
   }
 
   const submitAnswer = (response) => {
