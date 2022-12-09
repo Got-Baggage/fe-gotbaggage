@@ -1,5 +1,5 @@
 // import React from 'react'
-import { gql, useQuery, useMutation } from '@apollo/client';
+import { gql, useQuery } from '@apollo/client';
 
 const GET_ESSENTIALS = gql`
   query {
@@ -101,13 +101,14 @@ const GET_ALL_TRIPS = gql`
 
 export const GetEssentials = () => {
   const { data, error, loading } = useQuery(GET_ESSENTIALS);
-
   return { data, error, loading };
 };
+
 export const GetCategories = () => {
   const { data, error, loading } = useQuery(GET_CATEGORIES);
   return { data, error, loading };
 };
+
 export const GetAllTrips = () => {
   const { data, error, loading } = useQuery(GET_ALL_TRIPS);
   return { data, error, loading };

@@ -6,7 +6,9 @@ import { DELETE_TRIP } from '../../queries'
 import { useMutation } from '@apollo/client'
 
 function TripContainer({ userTrips }) {
-  let { data, error, loading } = GetAllTrips()
+  let { data,
+    //  error, loading 
+    } = GetAllTrips()
 
   const [deleteTrip] = useMutation(DELETE_TRIP);
   

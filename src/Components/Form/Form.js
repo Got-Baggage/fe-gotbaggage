@@ -2,10 +2,10 @@ import React from 'react';
 import Nav from '../Nav/Nav';
 import Questions from '../Questions/Question';
 import { useState, useEffect } from 'react';
-import { mockData } from '../../questionsData';
+// import { mockData } from '../../questionsData';
 import { ADD_TRIP_MUTATION } from '../../queries';
 import { useMutation } from '@apollo/client';
-import { graphql } from 'graphql';
+// import { graphql } from 'graphql';
 
 function Form({ addUserTrip }) {
   const [responses, setResponses] = useState([]);
@@ -16,9 +16,9 @@ function Form({ addUserTrip }) {
     }
   }, [responses]);
 
-  const [tripCreate, { data, loading, error }] =
+  const [tripCreate, {}] =
     useMutation(ADD_TRIP_MUTATION);
-  console.log(tripCreate);
+  
 
   const readyData = () => {
     tripCreate({

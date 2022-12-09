@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 function TripCard({ tripName, category, traveler, id, image, handleDelete }) {
   return (
@@ -10,7 +10,7 @@ function TripCard({ tripName, category, traveler, id, image, handleDelete }) {
           <h3 className='card-label'>{tripName}</h3>
         </div>
         <div className="card-image-container">
-          <img className="card-image" src={image} />
+          <img className="card-image" src={image} alt="trip photograph"/>
         </div>
         {/* add images based on categories */}
         <button onClick={(e) => {handleDelete(id)}}>🗑️</button>
