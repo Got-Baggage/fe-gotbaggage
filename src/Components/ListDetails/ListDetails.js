@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { mockData } from '../../questionsData'
+// import { useState } from 'react'
+// import { mockData } from '../../questionsData'
 import Nav from '../Nav/Nav'
 import { GetEssentials } from '../../queries'
 
