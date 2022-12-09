@@ -16,7 +16,7 @@ function Form({ addUserTrip }) {
     }
   }, [responses]);
 
-  const [tripCreate, {data}] =
+  const [tripCreate] =
     useMutation(ADD_TRIP_MUTATION);
   
 
