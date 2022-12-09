@@ -1,13 +1,15 @@
-import { useState, useEffect } from 'react'
-import { mockData } from '../../questionsData'
+// import { useState } from 'react'
+// import { mockData } from '../../questionsData'
 import Nav from '../Nav/Nav'
 import { GetEssentials } from '../../queries'
 
 function ListDetails({ tripId }) {
-    let [essentialData, setEssentialData] = useState(mockData.data.essentialItems)
+    // let [essentialData, setEssentialData] = useState(mockData.data.essentialItems)
     //update the useState to empty array once we receive data? 
-    let [categoryData, setCategoryData] = useState(mockData.data.itemsByCategory)
-    let { data, error, loading } = GetEssentials()
+    // let [categoryData, setCategoryData] = useState(mockData.data.itemsByCategory)
+    let { data, 
+      // error, loading 
+    } = GetEssentials()
     // useEffect(() => { setEssentialData(data.essentialItems) })
 
 

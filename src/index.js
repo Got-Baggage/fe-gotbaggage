@@ -4,7 +4,7 @@ import './index.css';
 import App from "./Components/App/App"
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 // const client = new ApolloClient({
 //   uri: 'https://e44fa37e-c94e-4d93-8d75-4770f9b6db3c.mock.pstmn.io/graphql',

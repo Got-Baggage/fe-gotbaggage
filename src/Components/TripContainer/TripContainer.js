@@ -2,17 +2,30 @@ import React from 'react'
 import TripCard from '../TripCard/TripCard'
 import Nav from '../Nav/Nav'
 import {GetAllTrips} from '../../queries'
+import { DELETE_TRIP } from '../../queries'
+import { useMutation } from '@apollo/client'
 
 function TripContainer({ userTrips }) {
-  let { data, error, loading } = GetAllTrips()
-  let cards 
+  let { data,
+    //  error, loading 
+    } = GetAllTrips()
+
+  const [deleteTrip] = useMutation(DELETE_TRIP);
+  
+  const handleDelete = (id) => {
+    console.log(id)
+    deleteTrip({
+      variables: {
+        id: id
+      }
+    })
+  }
 
   const displayTrips = () => {
     if (!data) {
       return <p> loading </p>
     } else {
      return data.allTrips.map(trip => {
-        console.log(trip)
         return (
           <TripCard 
             tripName={trip.name}
@@ -21,6 +34,7 @@ function TripContainer({ userTrips }) {
             category={trip.category}
             traveler={trip.traveler}
             image={trip.image}
+            handleDelete={handleDelete}
             />
         )
       })

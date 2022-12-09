@@ -2,7 +2,7 @@
 import { gql, useQuery } from '@apollo/client';
 
 const GET_ESSENTIALS = gql`
-  {
+  query {
     essentialItems {
       name
     }
@@ -18,7 +18,7 @@ const GET_CATEGORIES = gql`
 `;
 
 // const ADD_TRIP_MUTATION = gql`
-//   mutation tripCreate($name: String!, $category: String!, $traveler: String!) {
+//   mutation TripCreate($name: String!, $category: String!, $traveler: String!) {
 //     trip(name: $name, category: $category, traveler: $traveler) {
 //       name
 //       category
@@ -26,6 +26,41 @@ const GET_CATEGORIES = gql`
 //     }
 //   }
 // `;
+const ADD_TRIP_MUTATION = gql`
+  mutation TripCreate($name: String!, $category: String!, $traveler: String!) {
+    tripCreate(
+      input: { name: $name, category: $category, traveler: $traveler }
+    ) {
+      trip {
+        name
+        category
+        image
+        traveler
+      }
+    }
+  }
+`;
+// const ADD_TRIP_MUTATION = gql`
+//   mutation {
+//     tripCreate(input: { name: "Baggage Trip", category: "beach", traveler:"hazel" }) {
+//       trip {
+//         name
+//         category
+//         image
+//       }
+//     }
+//   }
+// `;
+
+const DELETE_TRIP = gql`
+  mutation TripDelete($id: ID!) {
+    tripDelete(input: {id:$id}) {
+      trip {
+        id
+      }
+    }
+  }
+`;
 
 const GET_ALL_TRIPS = gql`
   query {
@@ -35,18 +70,6 @@ const GET_ALL_TRIPS = gql`
       id
       traveler
       image
-    }
-  }
-`;
-
-const ADD_TRIP_MUTATION = gql`
-  mutation {
-    tripCreate(input: { name: "Baggage Trip", category: "beach", traveler:"hazel" }) {
-      trip {
-        name
-        category
-        image
-      }
     }
   }
 `;
@@ -78,16 +101,19 @@ const ADD_TRIP_MUTATION = gql`
 
 export const GetEssentials = () => {
   const { data, error, loading } = useQuery(GET_ESSENTIALS);
-
   return { data, error, loading };
 };
+
 export const GetCategories = () => {
   const { data, error, loading } = useQuery(GET_CATEGORIES);
   return { data, error, loading };
 };
+
 export const GetAllTrips = () => {
   const { data, error, loading } = useQuery(GET_ALL_TRIPS);
   return { data, error, loading };
 };
+
+export { DELETE_TRIP };
 
 export { ADD_TRIP_MUTATION };
