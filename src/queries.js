@@ -35,6 +35,7 @@ const ADD_TRIP_MUTATION = gql`
         name
         category
         image
+        traveler
       }
     }
   }
