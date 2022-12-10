@@ -11,7 +11,7 @@ import { useQuery } from "@apollo/client";
 
 function App() {
   let [userTrips, setUserTrips] = useState([]);
-
+  let newId
   let addUserTrip = (newTrip) => {
     setUserTrips([...userTrips, newTrip]);
   };
@@ -23,17 +23,19 @@ function App() {
   } = GetAllTrips();
 
 
+
+
  const handleCardDetail = (id) => {
     console.log(id);
     let newId = parseInt(id)
-    console.log(newId)
-    console.log(ItemsByTrip)
-    ItemsByTrip({
-      variables: {
-        tripId: 1815,
-      }
-
-    });  
+    return newId
+    // console.log(newId)
+    // console.log(ItemsByTrip)
+    // ItemsByTrip({
+    //   variables: {
+    //     tripId: 1815,
+    //   }
+      
       // const { data, error, loading } = useQuery(GET_SINGLE_TRIP,{
       //   variables: {
       //   tripId: id,
@@ -63,7 +65,7 @@ function App() {
         <Route
           exact
           path="/list/:id"
-          render={({ match }) => <ListDetails tripId={match.params.id} />}
+          render={({ match }) => <ListDetails newId={newId} tripId={match.params.id} />}
         />
         <Route path="*" render={() => <ErrorPage />} />
       </Switch>
