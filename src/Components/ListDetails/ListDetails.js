@@ -4,15 +4,14 @@ import Nav from "../Nav/Nav";
 import { GET_SINGLE_TRIP, DELETE_ITEM } from "../../queries";
 import { useQuery, useMutation } from "@apollo/client";
 
-function ListDetails({ tripId, refetch }) {
+function ListDetails({ tripId }) {
   const [isVisible, setIsVisible] = useState(false)
   let newTripId = parseInt(tripId);
   console.log(newTripId);
-  let { loading, error, data } = useQuery(GET_SINGLE_TRIP, {
+  let { loading, error, data, refetch } = useQuery(GET_SINGLE_TRIP, {
     variables: {
       tripId: newTripId,
     },
-    onCompleted: refetch,
   });
 
   const [deleteItem] = useMutation(DELETE_ITEM, {
