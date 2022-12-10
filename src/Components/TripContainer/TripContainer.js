@@ -5,11 +5,12 @@ import { GetAllTrips, ItemsByTrip } from "../../queries";
 import { DELETE_TRIP } from "../../queries";
 import { useMutation, useQuery } from "@apollo/client";
 
-function TripContainer({ data, refetch }) {
+function TripContainer({ data, refetch, handleCardDetail }) {
  
   const [deleteTrip] = useMutation(DELETE_TRIP, {
     onCompleted: refetch,
   });
+ 
 
   const handleDelete = (id) => {
     console.log(id);
@@ -20,14 +21,6 @@ function TripContainer({ data, refetch }) {
     });
   };
 
-  const handleCardDetail = (id) => {
-    console.log(id);
-    ItemsByTrip({
-      variables: {
-        id: id,
-      },
-    });
-  };
 
   const displayTrips = () => {
     console.log("data", data);

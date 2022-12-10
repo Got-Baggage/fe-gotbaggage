@@ -20,14 +20,26 @@ const GET_CATEGORIES = gql`
   }
 `;
 
-const GET_SINGLE_TRIP = gql`
-  query ItemsByTrip($id: ID!) {
-    itemsByTrip( tripId: $id ) {
+export const GET_SINGLE_TRIP = gql`
+  query ItemsByTrip($tripId: Int!) {
+    itemsByTrip(input: {tripId: $tripId}) {            
       name
       id
+      category      
     }
   }
 `;
+
+
+// const GET_SINGLE_TRIP = gql`
+//   {
+//     itemsByTrip(tripId: 1813) {
+//       name
+//       id
+//       category
+//     }
+//   }
+// `;
 
 const ADD_TRIP_MUTATION = gql`
   mutation TripCreate($name: String!, $category: String!, $traveler: String!) {
@@ -83,9 +95,9 @@ export const GetAllTrips = () => {
   return { data, error, loading, refetch};
 };
 
-export const ItemsByTrip = () => {
+export const ItemsByTrip = (id) => {
   const { data, error, loading } = useQuery(GET_SINGLE_TRIP);
-  return { data, error, loading };
+  return { data, error, loading, id };
 }
 
 export { DELETE_TRIP };
