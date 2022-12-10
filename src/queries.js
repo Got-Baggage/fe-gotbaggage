@@ -20,6 +20,16 @@ const GET_CATEGORIES = gql`
   }
 `;
 
+const DELETE_ITEM = gql`
+  mutation TripItemDelete($tripId: Int! $itemId: Int!){
+    tripItemDelete(input: { tripId: $tripId, itemId: $itemId }) {
+      tripItem {
+        id
+      }
+    }
+  }
+`;
+
 export const GET_SINGLE_TRIP = gql`
   query ItemsByTrip($tripId: Int!) {
     itemsByTrip(tripId: $tripId) {            
@@ -101,5 +111,5 @@ export const GetAllTrips = () => {
 // }
 
 export { DELETE_TRIP };
-
+export {DELETE_ITEM}
 export { ADD_TRIP_MUTATION };

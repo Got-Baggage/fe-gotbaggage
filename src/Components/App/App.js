@@ -65,7 +65,13 @@ function App() {
         <Route
           exact
           path="/list/:id"
-          render={({ match }) => <ListDetails newId={newId} tripId={match.params.id} />}
+          render={({ match }) => (
+            <ListDetails
+              refetch={refetch}
+              newId={newId}
+              tripId={match.params.id}
+            />
+          )}
         />
         <Route path="*" render={() => <ErrorPage />} />
       </Switch>
