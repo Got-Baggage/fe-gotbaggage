@@ -4,10 +4,10 @@ import Questions from '../Questions/Question';
 import { useState, useEffect } from 'react';
 // import { mockData } from '../../questionsData';
 import { ADD_TRIP_MUTATION } from '../../queries';
-import { useMutation } from '@apollo/client';
+import { useMutation, useQuery, gql } from '@apollo/client';
 // import { graphql } from 'graphql';
 
-function Form({ addUserTrip }) {
+function Form({ addUserTrip, refetch }) {
   const [responses, setResponses] = useState([]);
 
   useEffect(() => {
@@ -16,8 +16,9 @@ function Form({ addUserTrip }) {
     }
   }, [responses]);
 
-  const [tripCreate] =
-    useMutation(ADD_TRIP_MUTATION);
+  const [tripCreate] = useMutation(ADD_TRIP_MUTATION, {
+    onCompleted: refetch,
+  });
   
 
   const readyData = () => {
@@ -52,6 +53,7 @@ function Form({ addUserTrip }) {
   // });
 
   const submitForm = () => {
+    refetch()
     readyData();
     console.log(responses);
     // tripCreate()

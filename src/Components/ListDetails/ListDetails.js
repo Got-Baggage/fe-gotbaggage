@@ -1,16 +1,17 @@
 // import { useState } from 'react'
 // import { mockData } from '../../questionsData'
 import Nav from '../Nav/Nav'
-import { GetEssentials } from '../../queries'
+import { GetEssentials, ItemsByTrip} from '../../queries'
+// import { useQuery } from '@apollo/client'
 
 function ListDetails({ tripId }) {
-    // let [essentialData, setEssentialData] = useState(mockData.data.essentialItems)
-    //update the useState to empty array once we receive data? 
-    // let [categoryData, setCategoryData] = useState(mockData.data.itemsByCategory)
-    let { data, 
-      // error, loading 
-    } = GetEssentials()
-    // useEffect(() => { setEssentialData(data.essentialItems) })
+  // let { items, error, loading} =ItemsByTrip()  
+  
+
+   let {
+     data, // error, loading
+   } = ItemsByTrip();
+     console.log(data);
 
 
 //will need to write useEffect hook to request this specific list from API and render it. In hook, set 
@@ -25,30 +26,44 @@ function ListDetails({ tripId }) {
 
   
 const returnedEssentials = () => {
-    return data.essentialItems.map(item => {
-    return (
-      <label>
-        <input type="checkbox" className="list-checkbox" />
-        <ul>{item.name}</ul>
-      </label>
-    );
-})
+  console.log(data)
+  if (!data){
+    return <p>no data</p>
+  } 
+  const essentials = data.itemsByTrip.filter((items) => items.category === "essentials")
+     return essentials.map((item) => {
+       return (
+         <label key={item.id}>
+           <input type="checkbox" className="list-checkbox" />
+           <ul key={item.id}>{item.name}</ul>
+         </label>
+       );
+     });
+  
+ 
+  
 }
 
 const returnedCategories = () => {
-    return data.itemsByCategory.map(item => {
-        return (
-          <div>
-          <label>
-            <input type="checkbox" className="list-checkbox" />
-            <ul key={item.id}>{item.name}</ul>
-          </label>
-          </div>
-        );
-    })
+  console.log(data);
+  if (!data) {
+    return <p>no data</p>;
+  }
+  const essentials = data.itemsByTrip.filter(
+    (items) => items.category !== "essentials"
+  );
+  return essentials.map((item) => {
+    return (
+      <label key={item.id}>
+        <input type="checkbox" className="list-checkbox" />
+        <ul key={item.id}>{item.name}</ul>
+      </label>
+    );
+  });
 }
 
   return (
+ 
     <section className="list-details-view">
       <Nav />
       <div className="list-buttons">

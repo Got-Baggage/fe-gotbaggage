@@ -1,33 +1,35 @@
-import React from 'react'
-import TripCard from '../TripCard/TripCard'
-import Nav from '../Nav/Nav'
-import {GetAllTrips} from '../../queries'
-import { DELETE_TRIP } from '../../queries'
-import { useMutation } from '@apollo/client'
+import React, { useState, useEffect } from "react";
+import TripCard from "../TripCard/TripCard";
+import Nav from "../Nav/Nav";
+import { GetAllTrips, ItemsByTrip } from "../../queries";
+import { DELETE_TRIP } from "../../queries";
+import { useMutation, useQuery } from "@apollo/client";
 
-function TripContainer({ userTrips }) {
-  let { data,
-    //  error, loading 
-    } = GetAllTrips()
+function TripContainer({ data, refetch, handleCardDetail }) {
+ 
+  const [deleteTrip] = useMutation(DELETE_TRIP, {
+    onCompleted: refetch,
+  });
+ 
 
-  const [deleteTrip] = useMutation(DELETE_TRIP);
-  
   const handleDelete = (id) => {
-    console.log(id)
+    console.log(id);
     deleteTrip({
       variables: {
-        id: id
-      }
-    })
-  }
+        id: id,
+      },
+    });
+  };
+
 
   const displayTrips = () => {
+    console.log("data", data);
     if (!data) {
-      return <p> loading </p>
+      return <p> loading </p>;
     } else {
-     return data.allTrips.map(trip => {
+      return data.allTrips.map((trip) => {
         return (
-          <TripCard 
+          <TripCard
             tripName={trip.name}
             key={trip.id}
             id={trip.id}
@@ -35,21 +37,19 @@ function TripContainer({ userTrips }) {
             traveler={trip.traveler}
             image={trip.image}
             handleDelete={handleDelete}
-            />
-        )
-      })
+            handleCardDetail={handleCardDetail}
+          />
+        );
+      });
     }
-  }
-
+  };
 
   return (
     <div>
       <Nav />
-      <section className="trip-container">
-        { displayTrips() }
-      </section>
+      <section className="trip-container">{displayTrips()}</section>
     </div>
-  )
+  );
 }
 
-export default TripContainer
+export default TripContainer;

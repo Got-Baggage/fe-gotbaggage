@@ -1,18 +1,17 @@
-import React from 'react';
-import { useState } from 'react';
-// import Nav from '../Nav/Nav'
-import { questionsData } from '../../questionsData';
-import { Link } from 'react-router-dom';
-import { GetCategories } from '../../queries';
-// import { AddTripMutation } from '../../queries';
+import React from "react";
+import { useState } from "react";
+import { questionsData } from "../../questionsData";
+import { Link } from "react-router-dom";
+import { GetCategories } from "../../queries";
 
 function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
   let [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  let [currentResponse, setCurrentResponse] = useState('');
-  let [confirmationMsg, setConfirmationMsg] = useState('');
-  // let [optionsValue, setOptionsValue] = useState([]);
-  let { data, 
-    // error, loading 
+  let [currentResponse, setCurrentResponse] = useState("");
+  let [confirmationMsg, setConfirmationMsg] = useState("");
+
+  let {
+    data,
+    // error, loading
   } = GetCategories();
 
   const displayOptions = () => {
@@ -47,10 +46,8 @@ function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
     e.preventDefault();
     clearInputs();
     if (currentQuestionIndex === 2) {
-      //eventually go to post function
       submitAnswer(currentResponse);
-      // submitForm();
-      setConfirmationMsg('Your trip was submitted!');
+      setConfirmationMsg("Your trip was submitted!");
     } else {
       submitAnswer(currentResponse);
       let questionIndexCopy = currentQuestionIndex;
@@ -59,7 +56,7 @@ function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
     }
   };
   const clearInputs = () => {
-    setCurrentResponse('');
+    setCurrentResponse("");
   };
   const checkIndex = () => {
     if (!currentQuestionIndex) {
@@ -77,34 +74,35 @@ function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
     if (currentQuestionIndex === 2) {
       return (
         <div className="question-container">
-          <h2>{questionsData[currentQuestionIndex]}</h2>
+          <h2 className="question">{questionsData[currentQuestionIndex]}</h2>
           <select
             className="dropdown"
             onChange={(e) => {
               setCurrentResponse(e.target.value);
-            }}>
+            }}
+          >
             <option value="">Choose one!</option>
             {displayOptions()}
-            {/* <option value="mock">Mock</option> */}
-            {/* this is going to come out, will enter dynamically from data */}
           </select>
           <div className="button-container">
             <button
               className="back-button"
               onClick={(e) => {
                 goBack(e);
-              }}>
-              {' '}
-              Back{' '}
+              }}
+            >
+              {" "}
+              Back{" "}
             </button>
             <button
               className="submit-button"
               disabled={checkInput()}
               onClick={(e) => {
                 handleSubmit(e);
-              }}>
-              {' '}
-              Submit{' '}
+              }}
+            >
+              {" "}
+              Submit{" "}
             </button>
           </div>
         </div>
@@ -112,31 +110,34 @@ function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
     } else {
       return (
         <div className="question-container">
-          <h2>{questionsData[currentQuestionIndex]}</h2>
+          <h2 className="question">{questionsData[currentQuestionIndex]}</h2>
           <input
             type="text"
             value={currentResponse}
             onChange={(e) => {
               setCurrentResponse(e.target.value);
-            }}></input>
+            }}
+          ></input>
           <div className="button-container">
             <button
               className="back-button"
               disabled={checkIndex()}
               onClick={(e) => {
                 goBack(e);
-              }}>
-              {' '}
-              Back{' '}
+              }}
+            >
+              {" "}
+              Back{" "}
             </button>
             <button
               className="submit-button"
               disabled={checkInput()}
               onClick={(e) => {
                 handleSubmit(e);
-              }}>
-              {' '}
-              Next{' '}
+              }}
+            >
+              {" "}
+              Next{" "}
             </button>
           </div>
         </div>
