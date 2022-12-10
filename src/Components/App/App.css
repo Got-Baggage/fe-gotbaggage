@@ -38,6 +38,10 @@
   justify-content: center;
 }
 
+.question{
+  margin-left: 10px;
+}
+
 .form-view {
   width: 100vw;
 }
@@ -74,6 +78,13 @@ select:focus {
   display: flex;
   width: 100%;
 } */
+
+/* .delete-button {
+  background-color: transparent;
+  border: none;
+  
+} */
+
 .homepage-button {
   margin-left: 10%;
 }
@@ -155,9 +166,10 @@ select:focus {
 
 .trip-container {
   display: flex;
+
   width: 100vw;
   height: 100vh;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   margin-top: 150px;
   gap: 2%;

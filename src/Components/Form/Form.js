@@ -4,7 +4,7 @@ import Questions from '../Questions/Question';
 import { useState, useEffect } from 'react';
 // import { mockData } from '../../questionsData';
 import { ADD_TRIP_MUTATION } from '../../queries';
-import { useMutation } from '@apollo/client';
+import { useMutation, useQuery, gql } from '@apollo/client';
 // import { graphql } from 'graphql';
 
 function Form({ addUserTrip }) {
@@ -16,8 +16,8 @@ function Form({ addUserTrip }) {
     }
   }, [responses]);
 
-  const [tripCreate] =
-    useMutation(ADD_TRIP_MUTATION);
+  const [tripCreate] = useMutation(ADD_TRIP_MUTATION, 
+  );
   
 
   const readyData = () => {

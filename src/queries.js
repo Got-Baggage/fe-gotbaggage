@@ -17,15 +17,15 @@ const GET_CATEGORIES = gql`
   }
 `;
 
-// const ADD_TRIP_MUTATION = gql`
-//   mutation TripCreate($name: String!, $category: String!, $traveler: String!) {
-//     trip(name: $name, category: $category, traveler: $traveler) {
-//       name
-//       category
-//       image
-//     }
-//   }
-// `;
+const GET_SINGLE_TRIP = gql`
+  query ItemsByTrip($id: ID!) {
+    itemsByTrip( tripId: $id ) {
+      name
+      id
+    }
+  }
+`;
+
 const ADD_TRIP_MUTATION = gql`
   mutation TripCreate($name: String!, $category: String!, $traveler: String!) {
     tripCreate(
@@ -40,17 +40,7 @@ const ADD_TRIP_MUTATION = gql`
     }
   }
 `;
-// const ADD_TRIP_MUTATION = gql`
-//   mutation {
-//     tripCreate(input: { name: "Baggage Trip", category: "beach", traveler:"hazel" }) {
-//       trip {
-//         name
-//         category
-//         image
-//       }
-//     }
-//   }
-// `;
+
 
 const DELETE_TRIP = gql`
   mutation TripDelete($id: ID!) {
@@ -62,7 +52,7 @@ const DELETE_TRIP = gql`
   }
 `;
 
-const GET_ALL_TRIPS = gql`
+export const GET_ALL_TRIPS = gql`
   query {
     allTrips {
       name
@@ -74,30 +64,6 @@ const GET_ALL_TRIPS = gql`
   }
 `;
 
-// 'mutation tripCreate($name: String!, $category: String!)
-// {
-// \n  trip(name: $name, category: $category, traveler: $traveler)
-//   { \n    name\n    category\n    traveler\n    __typename\n } \n
-// } ';
-
-// const TRIP_CREATE = gql `{
-//     tripCreate(input: {name: "Baggage Trip", category: 3, traveler: "Stephen"})
-//     {
-//       trip: {
-//         name
-//         category
-//         traveler
-//         image
-//       }
-//     }
-//   }
-//   `;
-
-//   export const newTrip = () => {
-//     const { data, error, loading } = useQuery(TRIP_CREATE);
-
-//     return { data, error, loading };
-//   }
 
 export const GetEssentials = () => {
   const { data, error, loading } = useQuery(GET_ESSENTIALS);
@@ -110,9 +76,14 @@ export const GetCategories = () => {
 };
 
 export const GetAllTrips = () => {
-  const { data, error, loading } = useQuery(GET_ALL_TRIPS);
-  return { data, error, loading };
+  const { data, error, loading, refetch } = useQuery(GET_ALL_TRIPS);
+  return { data, error, loading, refetch};
 };
+
+export const ItemsByTrip = () => {
+  const { data, error, loading } = useQuery(GET_SINGLE_TRIP);
+  return { data, error, loading };
+}
 
 export { DELETE_TRIP };
 

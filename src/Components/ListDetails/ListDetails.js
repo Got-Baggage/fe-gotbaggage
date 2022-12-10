@@ -1,14 +1,12 @@
 // import { useState } from 'react'
 // import { mockData } from '../../questionsData'
 import Nav from '../Nav/Nav'
-import { GetEssentials } from '../../queries'
+import { GetEssentials, ItemsByTrip } from '../../queries'
+import { useQuery } from '@apollo/client'
 
 function ListDetails({ tripId }) {
-    // let [essentialData, setEssentialData] = useState(mockData.data.essentialItems)
-    //update the useState to empty array once we receive data? 
-    // let [categoryData, setCategoryData] = useState(mockData.data.itemsByCategory)
-    let { data, 
-      // error, loading 
+  // let { items, error, loading} =ItemsByTrip()  
+  let { data, // error, loading
     } = GetEssentials()
     // useEffect(() => { setEssentialData(data.essentialItems) })
 
@@ -25,6 +23,7 @@ function ListDetails({ tripId }) {
 
   
 const returnedEssentials = () => {
+  // console.log(items)
     return data.essentialItems.map(item => {
     return (
       <label>

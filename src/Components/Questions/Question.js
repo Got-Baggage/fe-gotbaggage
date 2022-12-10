@@ -77,7 +77,7 @@ function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
     if (currentQuestionIndex === 2) {
       return (
         <div className="question-container">
-          <h2>{questionsData[currentQuestionIndex]}</h2>
+          <h2 className='question'>{questionsData[currentQuestionIndex]}</h2>
           <select
             className="dropdown"
             onChange={(e) => {
@@ -112,7 +112,7 @@ function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
     } else {
       return (
         <div className="question-container">
-          <h2>{questionsData[currentQuestionIndex]}</h2>
+          <h2 className='question'>{questionsData[currentQuestionIndex]}</h2>
           <input
             type="text"
             value={currentResponse}
