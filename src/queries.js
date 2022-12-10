@@ -5,12 +5,15 @@ const GET_ESSENTIALS = gql`
   query {
     essentialItems {
       name
+      id
     }
     itemsByCategory(category: 3) {
       name
+      id
     }
   }
 `;
+
 const GET_CATEGORIES = gql`
   query {
     categoryNames

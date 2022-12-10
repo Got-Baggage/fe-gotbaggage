@@ -1,15 +1,12 @@
-
-import { Route, Switch } from 'react-router-dom';
-import Form from '../Form/Form';
-import ErrorPage from '../ErrorPage/ErrorPage';
-import HomePage from '../HomePage/HomePage';
-import TripContainer from '../TripContainer/TripContainer';
-import ListDetails from '../ListDetails/ListDetails';
-import { GetAllTrips } from '../../queries';
-// import Nav from '../Nav/Nav';
-// import Questions from '../Questions/Question';
-import './App.css';
-import { useState } from 'react'
+import { Route, Switch } from "react-router-dom";
+import Form from "../Form/Form";
+import ErrorPage from "../ErrorPage/ErrorPage";
+import HomePage from "../HomePage/HomePage";
+import TripContainer from "../TripContainer/TripContainer";
+import ListDetails from "../ListDetails/ListDetails";
+import { GetAllTrips } from "../../queries";
+import "./App.css";
+import { useState } from "react";
 
 function App() {
   let [userTrips, setUserTrips] = useState([]);
@@ -19,7 +16,8 @@ function App() {
   };
 
   let {
-    data, refetch
+    data,
+    refetch,
     //  error, loading
   } = GetAllTrips();
 
@@ -27,10 +25,13 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/" render={() => <HomePage />} />
-        <Route path="/form" render={() => <Form addUserTrip={addUserTrip} refetch={refetch} />} />
+        <Route
+          path="/form"
+          render={() => <Form addUserTrip={addUserTrip} refetch={refetch} />}
+        />
         <Route
           path="/tripcontainer"
-          render={() => <TripContainer data1={data} />}
+          render={() => <TripContainer data={data} refetch={refetch} />}
         ></Route>
         <Route
           exact

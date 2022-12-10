@@ -1,33 +1,22 @@
-import React, { useState, useEffect } from 'react'
-import TripCard from '../TripCard/TripCard'
-import Nav from '../Nav/Nav'
-import { GetAllTrips, ItemsByTrip} from "../../queries";
-import { DELETE_TRIP } from '../../queries'
-import { useMutation, useQuery } from '@apollo/client'
+import React, { useState, useEffect } from "react";
+import TripCard from "../TripCard/TripCard";
+import Nav from "../Nav/Nav";
+import { GetAllTrips, ItemsByTrip } from "../../queries";
+import { DELETE_TRIP } from "../../queries";
+import { useMutation, useQuery } from "@apollo/client";
 
-
-function TripContainer({data1}) {
-  let {
-    data, refetch
-    //  error, loading
-  } = GetAllTrips();
-
-  
-
-  const [deleteTrip ] = useMutation(DELETE_TRIP, {
+function TripContainer({ data, refetch }) {
+ 
+  const [deleteTrip] = useMutation(DELETE_TRIP, {
     onCompleted: refetch,
   });
 
-
-
   const handleDelete = (id) => {
-    // refetch()
     console.log(id);
     deleteTrip({
       variables: {
         id: id,
       },
-      // refetchQueries: [{ query: getTrips() }],
     });
   };
 
@@ -70,4 +59,4 @@ function TripContainer({data1}) {
   );
 }
 
-export default TripContainer
+export default TripContainer;

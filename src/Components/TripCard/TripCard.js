@@ -6,15 +6,12 @@ function TripCard({ tripName, category, traveler, id, image, handleDelete, handl
     <article className="trip-card">
       <div className="card-details">
         <Link
-          to={`/list/${id}`}
-          onClick={(e) => {
-            handleCardDetail(id);
-          }}
+          to={`/list/${id}`}       
         >
           <h3 className="card-label">{traveler}</h3>
           <h3 className="card-label">{tripName}</h3>
         </Link>
-        <button className='delete-button'
+        <button className=''
           onClick={(e) => {
             handleDelete(id);
           }}
