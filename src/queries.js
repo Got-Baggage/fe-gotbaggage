@@ -41,8 +41,8 @@ export const GET_SINGLE_TRIP = gql`
 `;
 
 export const ITEM_CREATE = gql`
-mutation ItemCreate($tripId: Int!, $category: Int!, $itemName: String!) {
-  itemCreate(input: { tripId: $tripId, category: $category, itemName: $itemName})
+mutation ItemCreate($tripId: Int!, $itemName: String!) {
+  itemCreate(input: { tripId: $tripId, category: "essentials", itemName: $itemName})
   {
     item{
       name

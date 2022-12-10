@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Nav from "../Nav/Nav";
 import { GET_SINGLE_TRIP, DELETE_ITEM, ITEM_CREATE } from "../../queries";
 import { useQuery, useMutation } from "@apollo/client";
+import { useEffect } from 'react';
 
 function ListDetails({ tripId }) {
   const [isVisible, setIsVisible] = useState(false)
@@ -20,15 +21,23 @@ function ListDetails({ tripId }) {
   })
 
   const addSingleItem = () => {
-    console.log("newTripId", newTripId)
     addItem({
       variables: {
         tripId: newTripId,
-        category: 0,
         itemName: name
       },
       onCompleted: refetch,
     })
+  }
+
+//  useEffect(() => {
+//   clearItemInput()
+//  })
+
+  const clearItemInput = () => {
+    console.log('test')
+    setName("")
+    
   }
 
   const [deleteItem] = useMutation(DELETE_ITEM, {
@@ -119,7 +128,7 @@ function ListDetails({ tripId }) {
         <button className="add-button">Add Item</button>
       </div>
       <input type="text" className='add-item' placeholder='Add an item to include' onChange={(e) => setName(e.target.value)}/>
-      <button className="add-item" onClick={addSingleItem}></button>
+      <button className="add-item" onClick={addSingleItem} ></button>
       <div className="listed-items">
         <h1>Essential Items:</h1>
         <div className="essential-items">
