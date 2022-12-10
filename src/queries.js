@@ -40,6 +40,27 @@ export const GET_SINGLE_TRIP = gql`
   }
 `;
 
+export const ITEM_CREATE = gql`
+mutation ItemCreate($tripId: Int!, $category: Int!, $itemName: String!) {
+  itemCreate(input: { tripId: $tripId, category: $category, itemName: $itemName})
+  {
+    item{
+      name
+      id
+      category
+    }
+  }
+}`
+
+// mutation{
+//   itemCreate(input: {tripId: 1, itemName: "boss item"})
+//   {
+//     item{
+//       name
+//       id
+//     }
+//   }
+// }
 
 // const GET_SINGLE_TRIP = gql`
 //   {
@@ -113,3 +134,4 @@ export const GetAllTrips = () => {
 export { DELETE_TRIP };
 export {DELETE_ITEM}
 export { ADD_TRIP_MUTATION };
+

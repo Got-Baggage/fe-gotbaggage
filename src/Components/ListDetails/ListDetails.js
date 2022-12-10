@@ -1,11 +1,12 @@
 import { useState } from 'react'
 // import { mockData } from '../../questionsData'
 import Nav from "../Nav/Nav";
-import { GET_SINGLE_TRIP, DELETE_ITEM } from "../../queries";
+import { GET_SINGLE_TRIP, DELETE_ITEM, ITEM_CREATE } from "../../queries";
 import { useQuery, useMutation } from "@apollo/client";
 
 function ListDetails({ tripId }) {
   const [isVisible, setIsVisible] = useState(false)
+  const [name, setName] = useState('')
   let newTripId = parseInt(tripId);
   console.log(newTripId);
   let { loading, error, data, refetch } = useQuery(GET_SINGLE_TRIP, {
@@ -13,6 +14,22 @@ function ListDetails({ tripId }) {
       tripId: newTripId,
     },
   });
+
+  const [addItem] = useMutation(ITEM_CREATE, {
+    onCompleted: refetch
+  })
+
+  const addSingleItem = () => {
+    console.log("newTripId", newTripId)
+    addItem({
+      variables: {
+        tripId: newTripId,
+        category: 0,
+        itemName: name
+      },
+      onCompleted: refetch,
+    })
+  }
 
   const [deleteItem] = useMutation(DELETE_ITEM, {
     onCompleted: refetch,
@@ -34,26 +51,6 @@ function ListDetails({ tripId }) {
     e.preventDefault()
     setIsVisible(current => !current)
   }
-  // console.log("trip",tripId)
-  //    let {
-  //      data, // error, loading
-  //    } = ItemsByTrip({
-  //       variables: {
-  //         tripId: tripId,
-  //       }
-  //       })
-
-  //      console.log(data);
-
-  //will need to write useEffect hook to request this specific list from API and render it. In hook, set
-  //the state. Have a conditional render that says if state is empty (i.e., bad ID in url OR nothing returned from
-  //API call), either render an error msg or useHistory hook to send user to ErrorPage
-
-  // const setData = () => {
-  //     setListData([...essentialData, mockData])
-  //     console.log(listData)
-  // }
-  // const setData = setEssentialData(data)
 
   const returnedEssentials = () => {
     console.log(data);
@@ -121,6 +118,8 @@ function ListDetails({ tripId }) {
         </button>
         <button className="add-button">Add Item</button>
       </div>
+      <input type="text" className='add-item' placeholder='Add an item to include' onChange={(e) => setName(e.target.value)}/>
+      <button className="add-item" onClick={addSingleItem}></button>
       <div className="listed-items">
         <h1>Essential Items:</h1>
         <div className="essential-items">
