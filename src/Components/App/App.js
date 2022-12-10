@@ -5,43 +5,39 @@ import ErrorPage from '../ErrorPage/ErrorPage';
 import HomePage from '../HomePage/HomePage';
 import TripContainer from '../TripContainer/TripContainer';
 import ListDetails from '../ListDetails/ListDetails';
+import { GetAllTrips } from '../../queries';
 // import Nav from '../Nav/Nav';
 // import Questions from '../Questions/Question';
 import './App.css';
 import { useState } from 'react'
 
 function App() {
-  let [userTrips, setUserTrips] = useState([])
+  let [userTrips, setUserTrips] = useState([]);
 
   let addUserTrip = (newTrip) => {
-    setUserTrips([...userTrips, newTrip])
-  }
+    setUserTrips([...userTrips, newTrip]);
+  };
 
-
+  let {
+    data, refetch
+    //  error, loading
+  } = GetAllTrips();
 
   return (
     <div className="App">
       <Switch>
-        <Route
-          exact path="/"
-          render={() => <HomePage/>}
-        />
-        <Route
-          path="/form"
-          render={() => <Form addUserTrip={addUserTrip} />}
-        />
+        <Route exact path="/" render={() => <HomePage />} />
+        <Route path="/form" render={() => <Form addUserTrip={addUserTrip} refetch={refetch} />} />
         <Route
           path="/tripcontainer"
-          render={() => <TripContainer userTrips={userTrips} />}>
-        </Route>
-        <Route 
-          exact path="/list/:id"
-          render={({ match }) => <ListDetails tripId={match.params.id}/>}
-        />
+          render={() => <TripContainer data1={data} />}
+        ></Route>
         <Route
-          path="*"
-          render={() => <ErrorPage />}
+          exact
+          path="/list/:id"
+          render={({ match }) => <ListDetails tripId={match.params.id} />}
         />
+        <Route path="*" render={() => <ErrorPage />} />
       </Switch>
     </div>
   );

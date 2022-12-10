@@ -6,7 +6,7 @@ import { DELETE_TRIP } from '../../queries'
 import { useMutation, useQuery } from '@apollo/client'
 
 
-function TripContainer() {
+function TripContainer({data1}) {
   let {
     data, refetch
     //  error, loading
