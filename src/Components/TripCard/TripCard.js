@@ -5,9 +5,10 @@ function TripCard({ tripName, category, traveler, id, image, handleDelete, handl
   return (
     <article className="trip-card">
       <div className="card-details">
-        <h3 className="card-label">{traveler}</h3>
-        <h3 className="card-label">{tripName}</h3>
-
+        <Link to={`/list/${id}`}>
+          <h3 className="card-label">{traveler}</h3>
+          <h3 className="card-label">{tripName}</h3>
+        </Link>
         <button
           className=""
           onClick={(e) => {
@@ -16,15 +17,14 @@ function TripCard({ tripName, category, traveler, id, image, handleDelete, handl
         >
           🗑️
         </button>
-        <Link to={`/list/${id}`}>
-          <button
+
+        {/* <button
             onClick={(e) => {
               handleCardDetail(id);
             }}
           >
             View List
-          </button>
-        </Link>
+          </button> */}
       </div>
 
       <div className="card-image-container">

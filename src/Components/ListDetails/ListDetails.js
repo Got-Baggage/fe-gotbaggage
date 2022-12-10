@@ -1,17 +1,29 @@
 // import { useState } from 'react'
 // import { mockData } from '../../questionsData'
 import Nav from '../Nav/Nav'
-import { GetEssentials, ItemsByTrip} from '../../queries'
-// import { useQuery } from '@apollo/client'
+import { GetEssentials, GET_SINGLE_TRIP, ItemsByTrip} from '../../queries'
+import { useQuery } from '@apollo/client'
 
 function ListDetails({ tripId }) {
   // let { items, error, loading} =ItemsByTrip()  
-  
+  console.log(tripId)
+  let newId = parseInt(tripId)
+let  { loading, error, data } = useQuery(GET_SINGLE_TRIP, {
+   variables: {
+        tripId: newId,
+      },
+  });
 
-   let {
-     data, // error, loading
-   } = ItemsByTrip();
-     console.log(data);
+// console.log("trip",tripId)
+//    let {
+//      data, // error, loading
+//    } = ItemsByTrip({
+//       variables: {
+//         tripId: tripId,
+//       }
+//       })
+    
+//      console.log(data);
 
 
 //will need to write useEffect hook to request this specific list from API and render it. In hook, set 

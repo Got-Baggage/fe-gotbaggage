@@ -22,7 +22,7 @@ const GET_CATEGORIES = gql`
 
 export const GET_SINGLE_TRIP = gql`
   query ItemsByTrip($tripId: Int!) {
-    itemsByTrip(input: {tripId: $tripId}) {            
+    itemsByTrip(tripId: $tripId) {            
       name
       id
       category      
@@ -95,10 +95,10 @@ export const GetAllTrips = () => {
   return { data, error, loading, refetch};
 };
 
-export const ItemsByTrip = (id) => {
-  const { data, error, loading } = useQuery(GET_SINGLE_TRIP);
-  return { data, error, loading, id };
-}
+// export const ItemsByTrip = (id) => {
+//   const { data, error, loading } = useQuery(GET_SINGLE_TRIP);
+//   return { data, error, loading, id };
+// }
 
 export { DELETE_TRIP };
 
