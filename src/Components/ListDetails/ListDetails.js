@@ -1,19 +1,48 @@
 import { useState } from 'react'
 // import { mockData } from '../../questionsData'
 import Nav from "../Nav/Nav";
-import { GET_SINGLE_TRIP, DELETE_ITEM } from "../../queries";
+import { GET_SINGLE_TRIP, DELETE_ITEM, ITEM_CREATE } from "../../queries";
 import { useQuery, useMutation } from "@apollo/client";
+import { useEffect } from 'react';
 
-function ListDetails({ tripId, refetch }) {
+function ListDetails({ tripId }) {
   const [isVisible, setIsVisible] = useState(false)
+  const [addItemIsVisible, setAddItemIsVisible] = useState(false)
+  const [name, setName] = useState('') 
+
+
   let newTripId = parseInt(tripId);
-  console.log(newTripId);
-  let { loading, error, data } = useQuery(GET_SINGLE_TRIP, {
+
+
+  let { loading, error, data, refetch } = useQuery(GET_SINGLE_TRIP, {
     variables: {
       tripId: newTripId,
     },
-    onCompleted: refetch,
   });
+
+  const [addItem] = useMutation(ITEM_CREATE, {
+    onCompleted: refetch
+  })
+
+  const addSingleItem = () => {
+    addItem({
+      variables: {
+        tripId: newTripId,
+        itemName: name
+      },
+      onCompleted: refetch,
+    })
+  }
+
+//  useEffect(() => {
+//   clearItemInput()
+//  })
+
+  const clearItemInput = () => {
+    console.log('test')
+    setName("")
+    
+  }
 
   const [deleteItem] = useMutation(DELETE_ITEM, {
     onCompleted: refetch,
@@ -35,26 +64,27 @@ function ListDetails({ tripId, refetch }) {
     e.preventDefault()
     setIsVisible(current => !current)
   }
-  // console.log("trip",tripId)
-  //    let {
-  //      data, // error, loading
-  //    } = ItemsByTrip({
-  //       variables: {
-  //         tripId: tripId,
-  //       }
-  //       })
 
-  //      console.log(data);
+  const addItemToggle = (e) => {
+    e.preventDefault()
+    setAddItemIsVisible(current => !current)
+  }
 
-  //will need to write useEffect hook to request this specific list from API and render it. In hook, set
-  //the state. Have a conditional render that says if state is empty (i.e., bad ID in url OR nothing returned from
-  //API call), either render an error msg or useHistory hook to send user to ErrorPage
+  const toggleEditButtonText = () => {
+    if (isVisible) {
+      return "Done"
+    } else {
+      return "Edit"
+    }
+  }
 
-  // const setData = () => {
-  //     setListData([...essentialData, mockData])
-  //     console.log(listData)
-  // }
-  // const setData = setEssentialData(data)
+  const toggleAddButtonText = () => {
+    if (addItemIsVisible) {
+      return "Done"
+    } else {
+      return "Add Item"
+    }
+  }
 
   const returnedEssentials = () => {
     console.log(data);
@@ -118,9 +148,13 @@ function ListDetails({ tripId, refetch }) {
           className="edit-button"
           onClick={toggleEdit}          
         >
-          Edit
+          {toggleEditButtonText()}
         </button>
-        <button className="add-button">Add Item</button>
+        <button className="add-button" onClick={addItemToggle}>{toggleAddButtonText()}</button>
+      </div>
+      <div className="add-item-form" style={{visibility: addItemIsVisible ? 'visible' : 'hidden'}}>
+      <input type="text" className='add-item' placeholder='Add an item to include' onChange={(e) => setName(e.target.value)} />
+      <button className="add-item" onClick={addSingleItem} ><span>➕</span></button>
       </div>
       <div className="listed-items">
         <h1>Essential Items:</h1>
