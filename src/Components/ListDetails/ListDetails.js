@@ -7,9 +7,13 @@ import { useEffect } from 'react';
 
 function ListDetails({ tripId }) {
   const [isVisible, setIsVisible] = useState(false)
-  const [name, setName] = useState('')
+  const [addItemIsVisible, setAddItemIsVisible] = useState(false)
+  const [name, setName] = useState('') 
+
+
   let newTripId = parseInt(tripId);
-  console.log(newTripId);
+
+
   let { loading, error, data, refetch } = useQuery(GET_SINGLE_TRIP, {
     variables: {
       tripId: newTripId,
@@ -59,6 +63,11 @@ function ListDetails({ tripId }) {
     console.log('click')
     e.preventDefault()
     setIsVisible(current => !current)
+  }
+
+  const addItemToggle = (e) => {
+    e.preventDefault()
+    setAddItemIsVisible(current => !current)
   }
 
   const returnedEssentials = () => {
@@ -125,10 +134,12 @@ function ListDetails({ tripId }) {
         >
           Edit
         </button>
-        <button className="add-button">Add Item</button>
+        <button className="add-button" onClick={addItemToggle}>Add Item</button>
       </div>
-      <input type="text" className='add-item' placeholder='Add an item to include' onChange={(e) => setName(e.target.value)}/>
-      <button className="add-item" onClick={addSingleItem} ></button>
+      <div className="add-item-form" style={{visibility: addItemIsVisible ? 'visible' : 'hidden'}}>
+      <input type="text" className='add-item' placeholder='Add an item to include' onChange={(e) => setName(e.target.value)} />
+      <button className="add-item" onClick={addSingleItem} ><span>➕</span></button>
+      </div>
       <div className="listed-items">
         <h1>Essential Items:</h1>
         <div className="essential-items">
