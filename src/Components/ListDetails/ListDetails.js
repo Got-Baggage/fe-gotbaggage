@@ -70,6 +70,22 @@ function ListDetails({ tripId }) {
     setAddItemIsVisible(current => !current)
   }
 
+  const toggleEditButtonText = () => {
+    if (isVisible) {
+      return "Done"
+    } else {
+      return "Edit"
+    }
+  }
+
+  const toggleAddButtonText = () => {
+    if (addItemIsVisible) {
+      return "Done"
+    } else {
+      return "Add Item"
+    }
+  }
+
   const returnedEssentials = () => {
     console.log(data);
     if (!data) {
@@ -132,9 +148,9 @@ function ListDetails({ tripId }) {
           className="edit-button"
           onClick={toggleEdit}          
         >
-          Edit
+          {toggleEditButtonText()}
         </button>
-        <button className="add-button" onClick={addItemToggle}>Add Item</button>
+        <button className="add-button" onClick={addItemToggle}>{toggleAddButtonText()}</button>
       </div>
       <div className="add-item-form" style={{visibility: addItemIsVisible ? 'visible' : 'hidden'}}>
       <input type="text" className='add-item' placeholder='Add an item to include' onChange={(e) => setName(e.target.value)} />
