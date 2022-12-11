@@ -1,0 +1,23 @@
+{ 
+  "data":
+  {
+    "allTrips": [
+        {
+            "__typename": "Trip",
+            "name": "Beth's Ski Trip",
+            "category": "snowsports",
+            "id": "1927",
+            "traveler": "Beth",
+            "image": "https://hips.hearstapps.com/clv.h-cdn.co/assets/16/49/gettyimages-492392636-1.jpg"
+        },
+        {
+            "__typename": "Trip",
+            "name": "Hunter's beach vacation",
+            "category": "beach",
+            "id": "1962",
+            "traveler": "Hunter",
+            "image": "https://www.sandals.com/blog/content/images/2020/03/Sandals-Barbados-Beach-Palm-Trees-Beach.jpg"
+        }       
+    ]
+}
+}
