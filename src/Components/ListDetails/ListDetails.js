@@ -123,7 +123,7 @@ function ListDetails({ tripId }) {
     );
     return essentials.map((item) => {
       return (
-        <label key={item.id}>
+        <label className="list-label" key={item.id}>
           <input type="checkbox" className="list-checkbox" />
           <ul key={item.id}>{item.name}</ul>
           <button
