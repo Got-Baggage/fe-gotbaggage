@@ -41,9 +41,9 @@ describe('trip creation form', () => {
          fixture: "trips.json",
        }).as("trips");
     cy.get('form')
-    cy.get('input').type("my test vacation")
+    cy.get('input').type("Beth's Ski Trip")
     cy.get('.submit-button').click()
-    cy.get('input').type('Cypress')
+    cy.get('input').type('Beth')
     cy.get('.submit-button').click()
     cy.get('.dropdown').select("beach")
     cy.get('.submit-button').click()

@@ -1,5 +1,8 @@
 describe('Homepage', () => {
   beforeEach(() => {
+       cy.intercept("https://be-gotbaggage.fly.dev/graphql", {
+         fixture: "trips.json",
+       }).as("trips");
     cy.visit('http://localhost:3000/');
   })
   it('As a user, I should see a home page with a logo', () => {
