@@ -235,7 +235,15 @@ ul {
   cursor: pointer;
 }
 
+.add-item-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
 
+.text {
+  margin-right: 5px;
+}
 
 .list-checkbox {
   width: 2vw;
