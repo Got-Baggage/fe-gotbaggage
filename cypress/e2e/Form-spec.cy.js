@@ -11,7 +11,7 @@ describe('trip creation form', () => {
     cy.get('.submit-button').click()
     cy.get('input').type('Cypress')
     cy.get('.submit-button').click()
-    cy.get('.dropdown').select("Mock")
+    cy.get('.dropdown').select("beach")
     cy.get('.submit-button').click()
   })
 
@@ -21,7 +21,7 @@ describe('trip creation form', () => {
     cy.get('.submit-button').click()
     cy.get('input').type('Cypress')
     cy.get('.submit-button').click()
-    cy.get('.dropdown').select("Mock")
+    cy.get('.dropdown').select("beach")
     cy.get('.submit-button').click()
     cy.get('.successful-submit-container').should('include.text', 'Your trip was submitted!')
   })
@@ -32,7 +32,7 @@ describe('trip creation form', () => {
     cy.get('.submit-button').click()
     cy.get('input').type('Cypress')
     cy.get('.submit-button').click()
-    cy.get('.dropdown').select("Mock")
+    cy.get('.dropdown').select("beach")
     cy.get('.submit-button').click()
     cy.get('.view-trips-button').click()
     cy.url().should('eq', 'http://localhost:3000/tripcontainer')
@@ -45,7 +45,7 @@ describe('trip creation form', () => {
     cy.get('.submit-button').click()
     cy.get('input').type('Cypress')
     cy.get('.submit-button').click()
-    cy.get('.dropdown').select("Mock")
+    cy.get('.dropdown').select("beach")
     cy.get('.submit-button').click()
     cy.get('.view-trips-button').click()
     cy.get('.trip-card').first().should('include.text', 'my test vacation')
@@ -58,21 +58,21 @@ describe('trip creation form error handling', () => {
     cy.contains('Create Trip').click()
   })
 
-  it('should not allow a user to click "submit" without having typed anything', () => {
+  it.skip('should not allow a user to click "submit" without having typed anything', () => {
     cy.get('.submit-button').should('be.disabled')
   })
 
-  it('should not allow the user to go back on the first question', () => {
+  it.skip('should not allow the user to go back on the first question', () => {
     cy.get('.back-button').should('be.disabled')
   })
 
-  it('should re-disable the submit button when a new question is submitted', () => {
+  it.skip('should re-disable the submit button when a new question is submitted', () => {
     cy.get('input').type('my test trip')
     cy.get('.submit-button').click()
     cy.get('.submit-button').should('be.disabled')
   })
 
-  it('should allow the user to go back and view their response to the previous question', () => {
+  it.skip('should allow the user to go back and view their response to the previous question', () => {
     cy.get('input').type('my test trip')
     cy.get('.submit-button').click()
     cy.get('.back-button').should('be.enabled')

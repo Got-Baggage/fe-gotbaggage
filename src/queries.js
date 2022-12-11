@@ -42,7 +42,7 @@ export const GET_SINGLE_TRIP = gql`
 
 export const ITEM_CREATE = gql`
 mutation ItemCreate($tripId: Int!, $itemName: String!) {
-  itemCreate(input: { tripId: $tripId, category: "essentials", itemName: $itemName})
+  itemCreate(input: { tripId: $tripId, category: null, itemName: $itemName})
   {
     item{
       name
