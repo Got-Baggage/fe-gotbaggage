@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
 import TripCard from "../TripCard/TripCard";
 import Nav from "../Nav/Nav";
-import { GetAllTrips, ItemsByTrip } from "../../queries";
 import { DELETE_TRIP } from "../../queries";
-import { useMutation, useQuery } from "@apollo/client";
+import { useMutation} from "@apollo/client";
 
 function TripContainer({ data, refetch, handleCardDetail }) {
  

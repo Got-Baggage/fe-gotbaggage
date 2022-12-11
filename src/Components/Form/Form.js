@@ -2,10 +2,9 @@ import React from 'react';
 import Nav from '../Nav/Nav';
 import Questions from '../Questions/Question';
 import { useState, useEffect } from 'react';
-// import { mockData } from '../../questionsData';
 import { ADD_TRIP_MUTATION } from '../../queries';
-import { useMutation, useQuery, gql } from '@apollo/client';
-// import { graphql } from 'graphql';
+import { useMutation } from '@apollo/client';
+
 
 function Form({ addUserTrip, refetch }) {
   const [responses, setResponses] = useState([]);
@@ -14,6 +13,7 @@ function Form({ addUserTrip, refetch }) {
     if (responses.length === 3) {
       submitForm();
     }
+    // eslint-disable-next-line
   }, [responses]);
 
   const [tripCreate] = useMutation(ADD_TRIP_MUTATION, {
