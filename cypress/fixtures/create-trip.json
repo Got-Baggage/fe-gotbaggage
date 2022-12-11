@@ -1,0 +1,12 @@
+{
+    "data": {
+      "tripCreate": {
+        "trip": {
+          "name": "Baggage Trip",
+          "category": "international",
+          "traveler": "Stephen",
+          "image": "https://www.lonestar.edu/images/internationalTravel.jpg"
+        }
+      }
+    }
+  }

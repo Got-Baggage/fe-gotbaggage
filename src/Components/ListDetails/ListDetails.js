@@ -1,9 +1,8 @@
 import { useState } from 'react'
-// import { mockData } from '../../questionsData'
 import Nav from "../Nav/Nav";
 import { GET_SINGLE_TRIP, DELETE_ITEM, ITEM_CREATE } from "../../queries";
 import { useQuery, useMutation } from "@apollo/client";
-import { useEffect } from 'react';
+
 
 function ListDetails({ tripId }) {
   const [isVisible, setIsVisible] = useState(false)
@@ -14,7 +13,7 @@ function ListDetails({ tripId }) {
   let newTripId = parseInt(tripId);
 
 
-  let { loading, error, data, refetch } = useQuery(GET_SINGLE_TRIP, {
+  let { data, refetch } = useQuery(GET_SINGLE_TRIP, {
     variables: {
       tripId: newTripId,
     },
@@ -34,15 +33,10 @@ function ListDetails({ tripId }) {
     })
   }
 
-//  useEffect(() => {
-//   clearItemInput()
-//  })
-
-  const clearItemInput = () => {
-    console.log('test')
-    setName("")
-    
-  }
+  // const clearItemInput = () => {
+  //   console.log('test')
+  //   setName("")    
+  // }
 
   const [deleteItem] = useMutation(DELETE_ITEM, {
     onCompleted: refetch,

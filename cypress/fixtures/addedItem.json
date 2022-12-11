@@ -1,0 +1,26 @@
+{
+  "data": {
+    "itemsByTrip": [
+      {
+        "name": "Shampoo",
+        "id": "1",
+        "category": "essentials"
+      },
+      {
+        "name": "Soap",
+        "id": "2",
+        "category": "essentials"
+      },
+      {
+        "name": "sunglasses",
+        "id": "3",
+        "category": "beach"
+      },
+      {
+          "name": "Medicine",
+          "category": null,
+          "id": "145"
+        }
+    ]
+  }
+}

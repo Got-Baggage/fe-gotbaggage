@@ -4,10 +4,10 @@ import ErrorPage from "../ErrorPage/ErrorPage";
 import HomePage from "../HomePage/HomePage";
 import TripContainer from "../TripContainer/TripContainer";
 import ListDetails from "../ListDetails/ListDetails";
-import { GetAllTrips, GET_SINGLE_TRIP, ItemsByTrip} from "../../queries";
+import { GetAllTrips} from "../../queries";
 import "./App.css";
 import { useState } from "react";
-import { useQuery } from "@apollo/client";
+
 
 function App() {
   let [userTrips, setUserTrips] = useState([]);
@@ -24,24 +24,10 @@ function App() {
 
 
 
-
  const handleCardDetail = (id) => {
     console.log(id);
     let newId = parseInt(id)
-    return newId
-    // console.log(newId)
-    // console.log(ItemsByTrip)
-    // ItemsByTrip({
-    //   variables: {
-    //     tripId: 1815,
-    //   }
-      
-      // const { data, error, loading } = useQuery(GET_SINGLE_TRIP,{
-      //   variables: {
-      //   tripId: id,
-      // }
-      // });
-      // return { data, error, loading };    
+    return newId     
   };
 
   return (

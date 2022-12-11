@@ -5,7 +5,7 @@ function TripCard({ tripName, category, traveler, id, image, handleDelete, handl
   return (
     <article className="trip-card">
       <div className="card-details">
-        <Link to={`/list/${id}`}>
+        <Link className="link-list-detail" to={`/list/${id}`}>
           <h3 className="card-label">{traveler}</h3>
           <h3 className="card-label">{tripName}</h3>
         </Link>
