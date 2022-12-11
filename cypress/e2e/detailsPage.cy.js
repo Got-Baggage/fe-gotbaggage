@@ -1,9 +1,15 @@
 describe('Items page', () => {
+    beforeEach(() => {
+      cy.intercept("https://be-gotbaggage.fly.dev/graphql", {
+       fixture: "trips.json",
+     }).as("trips");       
+ 
+    })
   it('Should be able to see all items for a trip', () => {
      cy.intercept("https://be-gotbaggage.fly.dev/graphql", {
        fixture: "trips.json",
-     }).as("trips");
-    cy.visit("http://localhost:3000/tripcontainer");
+     }).as("trips");  
+     cy.visit("http://localhost:3000/tripcontainer");  
     cy.get(".trip-container > :nth-child(1)");
       cy.intercept("https://be-gotbaggage.fly.dev/graphql", {
         fixture: "listDetails.json",
