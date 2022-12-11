@@ -13,7 +13,7 @@ jobs:
           pkg-manager: npm
       - run:
           name: Run tests
-          command: npm test
+          command: npm test --passWithNoTests
       - run : 
           name : Run build
           command: npm run build 

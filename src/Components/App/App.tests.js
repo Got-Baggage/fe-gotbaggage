@@ -17,6 +17,6 @@ test('renders baggage app', () => {
     </Router>
   );
 
-  const linkElement = screen.getByText('BAGGAGE');
+  const linkElement = screen.getByText('Baggage');
   expect(linkElement).toBeInTheDocument();
 });
