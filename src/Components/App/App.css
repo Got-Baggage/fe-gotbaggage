@@ -117,7 +117,8 @@ select:focus {
 .edit-button,
 .back-button,
 .view-trips-button,
-.add-button {
+.add-button,
+.error-home-button {
   align-self: center;
   background-color: white;
   background-image: none;
@@ -294,6 +295,28 @@ ul {
   bottom: 0;
 }
 
+.error-elements-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error-message{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error-img {
+  width: 300px;
+  height: 300px;
+}
+
+.error-home-link{
+  margin-top: 10px;
+  text-decoration: underline;
+}
 
 @media(min-width: 300px) and (max-width:760px) {
   html {
