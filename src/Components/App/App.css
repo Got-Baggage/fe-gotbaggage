@@ -1,7 +1,7 @@
 html{
   height: 100%;
   width:100%; 
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .App {
   /* height: 100vh;
@@ -87,7 +87,7 @@ select:focus {
 } */
 
 .homepage-button {
-  margin-left: 10%;
+  margin: 5px;
 }
 
 .submit-button,
@@ -223,6 +223,19 @@ label,
 ul {
   display: flex;
 }
+
+.list-label {
+  position: relative;
+}
+
+.delete-item-button {
+  position: absolute;
+  right: 0;
+  height: 85%;
+  cursor: pointer;
+}
+
+
 
 .list-checkbox {
   width: 2vw;
