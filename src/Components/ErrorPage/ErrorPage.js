@@ -11,9 +11,8 @@ function ErrorPage() {
                     alt="sad cloud cartoon"
                     className="error-img"
                 />
-                <h1>Sorry, the page you are looking for does not exist. 
-                    <br />
-                    <Link to="/">Home</Link>
+                <h1 className='error-message'>Sorry, the page you are looking for does not exist. 
+                <Link to="/" className='error-home-link'><button className='error-home-button'>Home</button></Link>
                 </h1>
             </section>
         </section>
