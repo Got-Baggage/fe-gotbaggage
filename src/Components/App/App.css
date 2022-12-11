@@ -1,14 +1,15 @@
-/* html{
+html{
   height: 100%;
   width:100%; 
-} */
+  overflow: hidden;
+}
 .App {
-  height: 100vh;
+  /* height: 100vh;
   width: 100%;
-  align-items: center;
+  align-items: center; */
   font-family: 'Quicksand', sans-serif;
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
 }
 
 .nav-container,
@@ -166,13 +167,14 @@ select:focus {
 
 .trip-container {
   display: flex;
-
+  flex-wrap: wrap;
   width: 100vw;
   height: 100vh;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 150px;
+  align-content: flex-start;
   gap: 2%;
+  margin-left: 20px;
 }
 
 .trip-card {
@@ -189,6 +191,7 @@ select:focus {
   border-style: solid;
   width: 250px;
   height: 100px;
+  position: relative;
 }
 
 a:link {
@@ -236,23 +239,38 @@ ul {
 }
 
 .card-image-container {
-  height: 90px;
-  width: 35%;
+  height: 75%;
+  width: 40%;
   margin-left: 2%;
+  position: absolute;
+  right: 0;
+  margin-right: 5px;
 }
 
 .card-image {
-  height: 90px;
+  height: 100%;
   width: 100%;
+  object-fit: cover;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
 }
 
 .card-details {
   display: flex;
   flex-direction: column;
+  position: relative;
+  width: 140px;
 }
 
 .card-label {
   margin: 2px;
+}
+
+.card-delete {
+  position: absolute;
+  bottom: 0;
 }
 
 
@@ -282,11 +300,22 @@ ul {
   .trip-container {
     flex-direction: column;
     flex-wrap: nowrap;
+    margin-left: 0;
   }
 
   .list-checkbox {
     width: 7vw;
   }
 
+  .card-image-container {
+    height: 60%;
+  }
 
+  .trip-card {
+    padding: 1.75rem;
+  }
+
+  .card-details {
+    height: 100px;
+  }
 }

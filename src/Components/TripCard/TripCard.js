@@ -10,7 +10,7 @@ function TripCard({ tripName, category, traveler, id, image, handleDelete, handl
           <h3 className="card-label">{tripName}</h3>
         </Link>
         <button
-          className=""
+          className="card-delete"
           onClick={(e) => {
             handleDelete(id);
           }}
