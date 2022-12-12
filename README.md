@@ -1,70 +1,109 @@
-# Getting Started with Create React App
+<h2 align="center">Got Baggage</h2>
 
+  <h4 align="center">
+   Need help deciding what to pack for your trip?
+  </h4>
+
+This application has prebuilt packing list for your next adventure. 
+
+## Table of Contents
+- [Overview](#Overview)
+- [Highlights](#Highlights)
+- [Technologies](#Technologies)
+- [Links](#Links)
+- [ScreenShots](#ScreenShots)
+- [Getting Started](#GETTING-STARTED)
+- [Contributors](#Contributors)
+- [Future Directions](#Future-Directions)
+
+
+## Overview
+
+This was a group CapStone project. 
+
+* Demonstrate knowledge you’ve gained throughout Turing
+* Use an agile process to turn well defined requirements into deployed and production ready software
+*Gain experience dividing applications into components and domains of responsibilities to facilitate multi-developer teams. Service oriented architecture concepts and patterns are highly encouraged.
+* Explore and implement new concepts, patterns, or libraries that have not been explicitly taught while at Turing
+* Practice an advanced, professional git workflow including a Pull Request Review
+* Gain experience using continuous integration tools to build and automate the deployment of features
+* Build applications that execute in development, test, CI, and production environments
+* Focus on communication between front-end and back-end teams in order to complete and deploy features that have been outlined by the project spec
+
+## Features:
+  * As a user
+
+
+## Technologies
+
+ ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+ ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+ ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Cypress](https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white)
+
+## Links
+Deployed Project: [Got Baggage]()
+Backend: [BE-got-Baggage]()
+Deployed using ![Vercel]()
+
+### Videos
+
+
+ 
+## GETTING STARTED
+
+### Installation
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Fork this Repo
+2. Clone it down to your machine
+3. cd into the root of the project directory
+4. Run `npm install`
+5. To verify that it is setup correctly, run `npm start` in your terminal to start the local server. This runs the app in the development mode. Open http://localhost:3000 to view it in your browser.
+6. See the section about [deployment](https://create-react-app.dev/docs/deployment/) for more information.
+7. Enter `Ctrl + C` in your terminal to stop the local server at any time.
 
-## Available Scripts
+### Testing
+This project was tested with [Cypress](https://docs.cypress.io/guides/getting-started/installing-cypress#Installing)
+1. cd into this project
+2. Run `npm run cypress`
 
-In the project directory, you can run:
+## Contributors
+<h3>Hazel Pablo</h3>
 
-### `npm start`
+[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Hpablo08)
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hazel-pablo-704779245/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<h3>Beth Wilson </h3>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/BethWProjects)
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/beth-wilson-92594284/)
 
-### `npm test`
+<h3>Alycia Canavan </h3>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/alyciacan)
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/alycia-canavan/)
 
-### `npm run build`
+<h3>Hunter Monroe</h3>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Hmonroe2/)
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hunter-monroe-035ab0188/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<h3>Nicole Esquer</h3>
 
-### `npm run eject`
+[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/nicole-esquer)
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nicole-esquer)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<h3>Nikky Rojas</h3>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/nikkyrojas/)
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nikkyrojas/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<h3>Stephen Fabian</h3>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/stephenfabian)
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/stephen-fabian-5498658a/)
 
-## Learn More
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Future Directions
