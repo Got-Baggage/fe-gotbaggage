@@ -24,6 +24,16 @@ describe('Display all made trips', () => {
      cy.get(":nth-child(2) > .card-image-container > .card-image");
      cy.get(":nth-child(2) > .card-details > .card-delete");
   })
+  it("Should be able to delete a trip", () => {
+     cy.intercept("https://be-gotbaggage.fly.dev/graphql", {
+       fixture: "oneTrip.json",
+     }).as("trips");
+     cy.visit("localhost:3000/tripcontainer");
+    cy.get(":nth-child(1) > .card-details > .card-delete").click()
+    cy.get(":nth-child(2) > .card-details > a > :nth-child(2)").should("not.exist")
+    
+
+  })
   it("Should be able to retun to the homescreen by clicking the nav logo", () => {
     cy.get(".nav-logo").click();
     cy.url().should("include", "/");

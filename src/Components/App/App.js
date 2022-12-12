@@ -24,12 +24,6 @@ function App() {
 
 
 
- const handleCardDetail = (id) => {
-    console.log(id);
-    let newId = parseInt(id)
-    return newId     
-  };
-
   return (
     <div className="App">
       <Switch>
@@ -41,8 +35,7 @@ function App() {
         <Route
           path="/tripcontainer"
           render={() => (
-            <TripContainer
-              handleCardDetail={handleCardDetail}
+            <TripContainer              
               data={data}
               refetch={refetch}
             />
