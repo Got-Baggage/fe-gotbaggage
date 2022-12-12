@@ -55,8 +55,6 @@ function Form({ addUserTrip, refetch }) {
   const submitForm = () => {
     refetch()
     readyData();
-    console.log(responses);
-    // tripCreate()
     addUserTrip();
   };
 
