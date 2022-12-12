@@ -1,0 +1,15 @@
+{ 
+  "data":
+  {
+    "allTrips": [       
+        {
+            "__typename": "Trip",
+            "name": "Hunter's beach vacation",
+            "category": "beach",
+            "id": "1962",
+            "traveler": "Hunter",
+            "image": "https://www.sandals.com/blog/content/images/2020/03/Sandals-Barbados-Beach-Palm-Trees-Beach.jpg"
+        }       
+    ]
+}
+}

@@ -3,7 +3,7 @@ import Nav from "../Nav/Nav";
 import { DELETE_TRIP } from "../../queries";
 import { useMutation} from "@apollo/client";
 
-function TripContainer({ data, refetch, handleCardDetail }) {
+function TripContainer({ data, refetch }) {
  
   const [deleteTrip] = useMutation(DELETE_TRIP, {
     onCompleted: refetch,
@@ -34,8 +34,7 @@ function TripContainer({ data, refetch, handleCardDetail }) {
             category={trip.category}
             traveler={trip.traveler}
             image={trip.image}
-            handleDelete={handleDelete}
-            handleCardDetail={handleCardDetail}
+            handleDelete={handleDelete}          
           />
         );
       });
