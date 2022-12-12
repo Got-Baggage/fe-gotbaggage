@@ -26,11 +26,9 @@ function TripCard({ tripName, category, traveler, id, image, handleDelete, handl
             View List
           </button> */}
       </div>
-
       <div className="card-image-container">
         <img className="card-image" src={image} alt="trip photograph" />
-      </div>
-      {/* add images based on categories */}
+      </div>      
     </article>
   );
 }

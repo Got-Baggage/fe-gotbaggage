@@ -106,6 +106,32 @@ function ListDetails({ tripId }) {
       );
     });
   };
+    const returnedCreatedItems = () => {
+      console.log(data);
+      if (!data) {
+        return <p>no data</p>;
+      }
+      const essentials = data.itemsByTrip.filter(
+        (items) => items.category === null
+      );
+      return essentials.map((item) => {
+        return (
+          <label className="list-label" key={item.id}>
+            <input type="checkbox" className="list-checkbox" />
+            <ul key={item.id}>{item.name}</ul>
+            <button
+              className="delete-item-button"
+              style={{ visibility: isVisible ? "visible" : "hidden" }}
+              onClick={(e) => {
+                handleItemDelete(item.id);
+              }}
+            >
+              🗑️
+            </button>
+          </label>
+        );
+      });
+    };
 
   const returnedCategories = () => {
     console.log(data);
@@ -113,7 +139,7 @@ function ListDetails({ tripId }) {
       return <p>no data</p>;
     }
     const essentials = data.itemsByTrip.filter(
-      (items) => items.category !== "essentials"
+      (items) => items.category !== "essentials" && items.category !== null
     );
     return essentials.map((item) => {
       return (
@@ -134,21 +160,32 @@ function ListDetails({ tripId }) {
     });
   };
 
+
+
   return (
     <section className="list-details-view">
       <Nav />
       <div className="list-buttons">
-        <button
-          className="edit-button"
-          onClick={toggleEdit}          
-        >
+        <button className="edit-button" onClick={toggleEdit}>
           {toggleEditButtonText()}
         </button>
-        <button className="add-button" onClick={addItemToggle}>{toggleAddButtonText()}</button>
+        <button className="add-button" onClick={addItemToggle}>
+          {toggleAddButtonText()}
+        </button>
       </div>
-      <div className="add-item-form" style={{visibility: addItemIsVisible ? 'visible' : 'hidden'}}>
-      <input type="text" className='add-item' placeholder='Add an item to include' onChange={(e) => setName(e.target.value)} />
-      <button className="add-item" onClick={addSingleItem} ><span>➕</span></button>
+      <div
+        className="add-item-form"
+        style={{ visibility: addItemIsVisible ? "visible" : "hidden" }}
+      >
+        <input
+          type="text"
+          className="add-item"
+          placeholder="Add an item to include"
+          onChange={(e) => setName(e.target.value)}
+        />
+        <button className="add-item" onClick={addSingleItem}>
+          <span>➕</span>
+        </button>
       </div>
       <div className="listed-items">
         <h1>Essential Items:</h1>
@@ -157,6 +194,8 @@ function ListDetails({ tripId }) {
         </div>
         <h1>Activity Items:</h1>
         <div>{returnedCategories()}</div>
+        <h1>Your Added Items:</h1>
+        <div>{returnedCreatedItems()}</div>
       </div>
     </section>
   );
