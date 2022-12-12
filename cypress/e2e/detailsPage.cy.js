@@ -37,7 +37,7 @@ describe('Items page', () => {
        fixture: "addedItem.json",
      }).as("add item");
     cy.get("button.add-item").click();
-    cy.get(":nth-child(4) > :nth-child(2) > ul").contains("Medicine")
+    cy.get(":nth-child(6) > :nth-child(2) > ul").contains("Medicine")
 
   })  
   it("Should be able to delete an item", () => {
@@ -47,6 +47,6 @@ describe('Items page', () => {
        fixture: "listDetails.json",
      }).as("list details");
     cy.get(":nth-child(4) > :nth-child(2) > .delete-item-button").click()
-    cy.get(":nth-child(4) > :nth-child(2) > ul").should("not.exist")
+    cy.get(":nth-child(6) > :nth-child(2) > ul").should("not.exist")
   })
 })

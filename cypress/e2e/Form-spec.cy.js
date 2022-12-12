@@ -14,15 +14,15 @@ describe('trip creation form', () => {
 
   it('prompts the user to pick a trip name, enter who the list will be for, and select a trip type', () => {
     cy.get('form')
-      // .contains('What is your trip name?')
+      cy.get('.question').contains('What would you like to call this trip? (For example: "January Mexico trip")' );
     cy.get('input').type("my test vacation")
-    cy.get('.submit-button').click()
+    cy.get('.submit-button').should('exist').click()
+    cy.get('.question').contains('Who is this list for?');
     cy.get('input').type('Cypress')
-    cy.get('.submit-button').click()
-   
+    cy.get('.submit-button').should('exist').click()
+    cy.get('.question').contains('What type of trip is this?');
     cy.get('.dropdown').select("beach")
-    cy.get('.submit-button').click()
-
+    cy.get('.submit-button').should('exist').click()
   })
 
   it('shows the user a confirmation message when their trip has been submitted', () => {
@@ -37,7 +37,7 @@ describe('trip creation form', () => {
   })
 
   it('allows the user to navigate to view their trips upon successful submission', () => {
-       cy.intercept("https://be-gotbaggage.fly.dev/graphql", {
+    cy.intercept("https://be-gotbaggage.fly.dev/graphql", {
          fixture: "trips.json",
        }).as("trips");
     cy.get('form')
