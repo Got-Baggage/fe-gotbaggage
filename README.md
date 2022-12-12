@@ -19,7 +19,7 @@ This application has prebuilt packing list for your next adventure.
 
 ## Overview
 
-This was a solo showcase project assigned in week 18 of the Turing School of Software and Design front-end engineering program. The goals of this solo project were to:
+This was a group CapStone project. 
 
 * Demonstrate knowledge you’ve gained throughout Turing
 * Use an agile process to turn well defined requirements into deployed and production ready software
@@ -68,7 +68,6 @@ This project was tested with [Cypress](https://docs.cypress.io/guides/getting-st
 2. Run `npm run cypress`
 
 ## Contributors
-<h2 id="contributors"> Contributors</h2>
 <h3>Hazel Pablo</h3>
 
 [![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Hpablo08)

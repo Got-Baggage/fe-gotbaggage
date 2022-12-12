@@ -1,8 +1,9 @@
-html{
+html {
   height: 100%;
-  width:100%; 
+  width: 100%;
   overflow-x: hidden;
 }
+
 .App {
   /* height: 100vh;
   width: 100%;
@@ -17,9 +18,11 @@ html{
   display: flex;
   justify-content: flex-end;
 }
-.nav-container{
+
+.nav-container {
   margin-bottom: 20px;
 }
+
 .nav-logo {
   height: auto;
   width: 40%;
@@ -39,7 +42,7 @@ html{
   justify-content: center;
 }
 
-.question{
+.question {
   margin-left: 10px;
 }
 
@@ -293,15 +296,16 @@ ul {
 .card-delete {
   position: absolute;
   bottom: 0;
+  cursor: pointer;
 }
 
-.error-elements-box{
+.error-elements-box {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.error-message{
+.error-message {
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -313,7 +317,7 @@ ul {
   height: 300px;
 }
 
-.error-home-link{
+.error-home-link {
   margin-top: 10px;
   text-decoration: underline;
 }
