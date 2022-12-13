@@ -7,6 +7,7 @@ import { useQuery, useMutation } from "@apollo/client";
 function ListDetails({ tripId }) {
   const [isVisible, setIsVisible] = useState(false)
   const [addItemIsVisible, setAddItemIsVisible] = useState(false)
+  // const [createItemIsVisible, setCreateItemIsVisible] = useState(false)
   const [name, setName] = useState('') 
 
 
@@ -32,11 +33,6 @@ function ListDetails({ tripId }) {
       onCompleted: refetch,
     })
   }
-
-  // const clearItemInput = () => {
-  //   console.log('test')
-  //   setName("")    
-  // }
 
   const [deleteItem] = useMutation(DELETE_ITEM, {
     onCompleted: refetch,
@@ -64,11 +60,16 @@ function ListDetails({ tripId }) {
     setAddItemIsVisible(current => !current)
   }
 
+  // const createItemToggle = (e) => {
+  //   e.preventDefault()
+  //   setCreateItemIsVisible(current => !current)
+  // }
+
   const toggleEditButtonText = () => {
     if (isVisible) {
       return "Done"
     } else {
-      return "Edit"
+      return "Edit Item"
     }
   }
 
@@ -80,8 +81,16 @@ function ListDetails({ tripId }) {
     }
   }
 
+  // const toggleCreatedItemsMessage = () => {
+  //  if (!data.itemsByTrip.includes('null')) {
+  //   return ' '
+  //  } else if (data.itemsByTrip.includes('null')){
+  //   return "TEST"
+  //  }
+  // }
+
+ 
   const returnedEssentials = () => {
-    console.log(data);
     if (!data) {
       return <p>no data</p>;
     }
@@ -110,7 +119,7 @@ function ListDetails({ tripId }) {
       console.log(data);
       if (!data) {
         return <p>no data</p>;
-      }
+      } 
       const essentials = data.itemsByTrip.filter(
         (items) => items.category === null
       );
@@ -134,8 +143,8 @@ function ListDetails({ tripId }) {
     };
 
   const returnedCategories = () => {
-    console.log(data);
     if (!data) {
+      console.log('test', data)
       return <p>no data</p>;
     }
     const essentials = data.itemsByTrip.filter(
@@ -160,11 +169,12 @@ function ListDetails({ tripId }) {
     });
   };
 
-
+  
 
   return (
     <section className="list-details-view">
       <Nav />
+      
       <div className="list-buttons">
         <button className="edit-button" onClick={toggleEdit}>
           {toggleEditButtonText()}
@@ -179,25 +189,28 @@ function ListDetails({ tripId }) {
       >
         <input
           type="text"
-          className="add-item"
+          className="add-item-input"
           placeholder="Add an item to include"
           onChange={(e) => setName(e.target.value)}
         />
-        <button className="add-item" onClick={addSingleItem}>
+        <button className="add-item-button" onClick={addSingleItem}>
           <span>➕</span>
         </button>
       </div>
       <div className="listed-items">
-        <h1>Essential Items:</h1>
+        <h1 className='essential-items-title'>Essential Items:</h1>
         <div className="essential-items">
           <div>{returnedEssentials()}</div>
         </div>
         <h1>Activity Items:</h1>
         <div>{returnedCategories()}</div>
-        <h1>Your Added Items:</h1>
+        <div className='added-items-container'>
+        <h1 className='added-items-title'>Add Additional Items:</h1>
         <div>{returnedCreatedItems()}</div>
+        {/* <p>{toggleCreatedItemsMessage()}</p> */}
+        </div>
       </div>
-    </section>
+    </section >
   );
 }
 

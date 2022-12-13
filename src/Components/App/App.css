@@ -5,14 +5,9 @@ html {
 }
 
 .App {
-  /* height: 100vh;
-  width: 100%;
-  align-items: center; */
   font-family: 'Quicksand', sans-serif;
-  /* display: flex;
-  flex-direction: column; */
 }
-
+/* Nav Section */
 .nav-container,
 .nav-link {
   display: flex;
@@ -27,6 +22,8 @@ html {
   height: auto;
   width: 40%;
 }
+
+/* Form */
 
 .image-container,
 .button-container {
@@ -47,10 +44,6 @@ html {
 }
 
 .form-view {
-  width: 100vw;
-}
-
-.list-details-view {
   width: 100vw;
 }
 
@@ -156,18 +149,26 @@ select:focus {
 .submit-button:hover,
 .back-button:hover,
 .edit-button:hover,
-.add-button:hover {
+.add-button:hover,
+.add-item-button:hover,
+.link-list-detail:hover,
+.view-trips-button:hover {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
   transform: translate3d(0, 2px, 0);
 }
 
-.homepage-button,
-.submit-button:focus {
+.homepage-button:focus,
+.submit-button:focus,
+.add-item-button:focus,
+.view-trips-button:focus {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
 }
 
-
 /******* List Card CSS ********/
+
+.list-details-view {
+  width: 100vw;
+}
 
 .trip-container {
   display: flex;
@@ -228,6 +229,14 @@ ul {
   flex-direction: column;
 }
 
+.essential-items-title{
+  margin-top: 10px;
+}
+
+.added-items-container{
+  margin-bottom: 80px;
+}
+
 label,
 ul {
   display: flex;
@@ -235,6 +244,19 @@ ul {
 
 .list-label {
   position: relative;
+  width: 300px;
+}
+.add-item-button {
+  margin-left: 8px;
+  width: 40px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  background-color: white;
+  border-color: #53868F;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  cursor: pointer;
 }
 
 .delete-item-button {
