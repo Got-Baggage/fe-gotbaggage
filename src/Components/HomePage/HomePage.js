@@ -1,9 +1,9 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   return (
-    <div className='homepage-container'>
+    <div className="homepage-container">
       <div className="image-container">
         <img
           className="homepage-logo"
@@ -23,4 +23,4 @@ function HomePage() {
   );
 }
 
-export default HomePage
+export default HomePage;

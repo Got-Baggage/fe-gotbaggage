@@ -1,17 +1,14 @@
 import TripCard from "../TripCard/TripCard";
 import Nav from "../Nav/Nav";
 import { DELETE_TRIP } from "../../queries";
-import { useMutation} from "@apollo/client";
+import { useMutation } from "@apollo/client";
 
 function TripContainer({ data, refetch }) {
- 
   const [deleteTrip] = useMutation(DELETE_TRIP, {
     onCompleted: refetch,
   });
- 
 
   const handleDelete = (id) => {
-    console.log(id);
     deleteTrip({
       variables: {
         id: id,
@@ -19,9 +16,7 @@ function TripContainer({ data, refetch }) {
     });
   };
 
-
   const displayTrips = () => {
-    console.log("data", data);
     if (!data) {
       return <p> loading </p>;
     } else {
@@ -34,7 +29,7 @@ function TripContainer({ data, refetch }) {
             category={trip.category}
             traveler={trip.traveler}
             image={trip.image}
-            handleDelete={handleDelete}          
+            handleDelete={handleDelete}
           />
         );
       });
