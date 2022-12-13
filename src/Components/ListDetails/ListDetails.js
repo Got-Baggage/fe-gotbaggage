@@ -183,13 +183,13 @@ function ListDetails({ tripId }) {
         </button>
       </div>
       <div className="listed-items">
-        <h1>Essential Items:</h1>
+        <h1 className='essential-items-title'>Essential Items:</h1>
         <div className="essential-items">
           <div>{returnedEssentials()}</div>
         </div>
         <h1>Activity Items:</h1>
         <div>{returnedCategories()}</div>
-        <h1>Your Added Items:</h1>
+        <h1 className='added-items-title'>Your Added Items:</h1>
         <div>{returnedCreatedItems()}</div>
       </div>
     </section>

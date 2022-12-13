@@ -228,6 +228,14 @@ ul {
   flex-direction: column;
 }
 
+.essential-items-title{
+  margin-top: 10px;
+}
+
+.added-items-title{
+  margin-bottom: 50px;
+}
+
 label,
 ul {
   display: flex;
