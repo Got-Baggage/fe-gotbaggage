@@ -49,7 +49,7 @@ This was a group CapStone project with a combined Front End and Back End team. F
 ## Links
 Deployed Project: [Got Baggage](https://fe-gotbaggage-je0to5o3l-hpablo08.vercel.app/)
 Backend: [BE-got-Baggage](https://be-gotbaggage.fly.dev/graphql)
-Deployed using ![Vercel](https://fe-gotbaggage-je0to5o3l-hpablo08.vercel.app/)
+Deployed using ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
 ## Screenshots
 
