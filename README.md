@@ -1,4 +1,6 @@
-<h2 align="center">Got Baggage</h2>
+<div align="center">
+<img src="https://user-images.githubusercontent.com/106141130/207424425-56f48d40-ed60-46d5-b3ad-c5e87b4a99a6.png" alt="get-baggage-icon" width="350" /> </div>
+  
 
   <h4 align="center">
    Need help deciding what to pack for your trip?
@@ -19,11 +21,11 @@ This application has prebuilt packing list's for your next adventure.
 
 ## Overview
 
-This was a group CapStone project. 
+This was a group CapStone project with a combined Front End and Back End team. For the first time students were given the opportunity to work collaboratively in an agile workflow to build an application. The project demonstrates knowledge we've gained throughout Turing as well as exploring new technologies. The Front End and Back End team implemented graphQL for the first time and used circle ci for continuous integration. 
 
 * Demonstrate knowledge you’ve gained throughout Turing
 * Use an agile process to turn well defined requirements into deployed and production ready software
-*Gain experience dividing applications into components and domains of responsibilities to facilitate multi-developer teams. Service oriented architecture concepts and patterns are highly encouraged.
+* Gain experience dividing applications into components and domains of responsibilities to facilitate multi-developer teams. Service oriented architecture concepts and patterns are highly encouraged.
 * Explore and implement new concepts, patterns, or libraries that have not been explicitly taught while at Turing
 * Practice an advanced, professional git workflow including a Pull Request Review
 * Gain experience using continuous integration tools to build and automate the deployment of features
@@ -42,14 +44,22 @@ This was a group CapStone project.
 ![Cypress](https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white)
 
 ## Links
-Deployed Project: [Got Baggage]()
-Backend: [BE-got-Baggage]()
-Deployed using ![Vercel]()
+Deployed Project: [Got Baggage](https://fe-gotbaggage-je0to5o3l-hpablo08.vercel.app/)
+Backend: [BE-got-Baggage](https://be-gotbaggage.fly.dev/graphql)
+Deployed using ![Vercel](https://fe-gotbaggage-je0to5o3l-hpablo08.vercel.app/)
 
-### Videos
+## Screenshots
 
+![Form View](https://user-images.githubusercontent.com/106141130/207420529-f35c014b-8ecf-4d36-b910-be644e063f53.gif)
 
- 
+![List View](https://user-images.githubusercontent.com/106141130/207420567-4684a48f-1e0d-40b0-a359-1eae2fda1233.gif)
+
+<h3 align="center">Phone View</h3>
+
+<div align="center">
+<img src="https://user-images.githubusercontent.com/106141130/207421043-471573bd-00f3-4ba3-9cd5-42c2adae466e.png" alt="phone-view-home" width="350"/><img src="https://user-images.githubusercontent.com/106141130/207421057-c8baba79-b233-49b5-82a2-ea8981fb3a0a.png" alt="phone-view-form" width="315"/><img src="https://user-images.githubusercontent.com/106141130/207421077-102103db-7138-46b6-8048-ff6d2ec216d6.png" alt="phone-view-list" width="350"/>
+</div>
+
 ## GETTING STARTED
 
 ### Installation
