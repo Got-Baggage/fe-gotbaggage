@@ -235,6 +235,18 @@ ul {
 
 .list-label {
   position: relative;
+  width: 300px;
+}
+.add-item-button {
+  margin-left: 8px;
+  width: 40px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  background-color: white;
+  border-color: #53868F;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
 }
 
 .delete-item-button {

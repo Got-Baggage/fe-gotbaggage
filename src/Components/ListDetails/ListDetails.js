@@ -33,11 +33,6 @@ function ListDetails({ tripId }) {
     })
   }
 
-  // const clearItemInput = () => {
-  //   console.log('test')
-  //   setName("")    
-  // }
-
   const [deleteItem] = useMutation(DELETE_ITEM, {
     onCompleted: refetch,
   });
@@ -68,7 +63,7 @@ function ListDetails({ tripId }) {
     if (isVisible) {
       return "Done"
     } else {
-      return "Edit"
+      return "Edit Item"
     }
   }
 
@@ -110,7 +105,7 @@ function ListDetails({ tripId }) {
       console.log(data);
       if (!data) {
         return <p>no data</p>;
-      }
+      } 
       const essentials = data.itemsByTrip.filter(
         (items) => items.category === null
       );
@@ -179,11 +174,11 @@ function ListDetails({ tripId }) {
       >
         <input
           type="text"
-          className="add-item"
+          className="add-item-input"
           placeholder="Add an item to include"
           onChange={(e) => setName(e.target.value)}
         />
-        <button className="add-item" onClick={addSingleItem}>
+        <button className="add-item-button" onClick={addSingleItem}>
           <span>➕</span>
         </button>
       </div>
