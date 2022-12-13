@@ -71,17 +71,6 @@ select:focus {
   border-style: solid;
 }
 
-/* .button-container {
-  display: flex;
-  width: 100%;
-} */
-
-/* .delete-button {
-  background-color: transparent;
-  border: none;
-  
-} */
-
 .homepage-button {
   margin: 5px;
   color: #0b4f5b!important;
@@ -213,7 +202,7 @@ a:visited {
   color: black;
 }
 
-.listed-items {
+.listed-items, .added-items-container {
   display: flex;
   align-items: center;
   flex-direction: column;

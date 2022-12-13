@@ -1,10 +1,9 @@
-import React from 'react';
-import Nav from '../Nav/Nav';
-import Questions from '../Questions/Question';
-import { useState, useEffect } from 'react';
-import { ADD_TRIP_MUTATION } from '../../queries';
-import { useMutation } from '@apollo/client';
-
+import React from "react";
+import Nav from "../Nav/Nav";
+import Questions from "../Questions/Question";
+import { useState, useEffect } from "react";
+import { ADD_TRIP_MUTATION } from "../../queries";
+import { useMutation } from "@apollo/client";
 
 function Form({ addUserTrip, refetch }) {
   const [responses, setResponses] = useState([]);
@@ -19,7 +18,6 @@ function Form({ addUserTrip, refetch }) {
   const [tripCreate] = useMutation(ADD_TRIP_MUTATION, {
     onCompleted: refetch,
   });
-  
 
   const readyData = () => {
     tripCreate({
@@ -31,29 +29,8 @@ function Form({ addUserTrip, refetch }) {
     });
   };
 
-  // const readyData = () => {
-  //   return {
-  //     variables: {
-  //     name: responses[0],
-  //     traveler: responses[1],
-  //     category: responses[2]
-  //       // name: 'Hunter',
-  //       // traveler: 'hunter',
-  //       // category: 'beach'
-  //     }
-  //   }
-  // }
-
-  // const [createTrip] = useMutation(ADD_TRIP_MUTATION, {
-  //   variables: {
-  //     name: responses[0],
-  //     traveler: responses[1],
-  //     category: responses[2]
-  //   }
-  // });
-
   const submitForm = () => {
-    refetch()
+    refetch();
     readyData();
     addUserTrip();
   };
@@ -80,7 +57,5 @@ function Form({ addUserTrip, refetch }) {
     </div>
   );
 }
-
-// export default graphql(createTrip)(Form)
 
 export default Form;

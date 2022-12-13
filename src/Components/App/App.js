@@ -4,14 +4,13 @@ import ErrorPage from "../ErrorPage/ErrorPage";
 import HomePage from "../HomePage/HomePage";
 import TripContainer from "../TripContainer/TripContainer";
 import ListDetails from "../ListDetails/ListDetails";
-import { GetAllTrips} from "../../queries";
+import { GetAllTrips } from "../../queries";
 import "./App.css";
 import { useState } from "react";
 
-
 function App() {
   let [userTrips, setUserTrips] = useState([]);
-  let newId
+  let newId;
   let addUserTrip = (newTrip) => {
     setUserTrips([...userTrips, newTrip]);
   };
@@ -21,8 +20,6 @@ function App() {
     refetch,
     //  error, loading
   } = GetAllTrips();
-
-
 
   return (
     <div className="App">
@@ -34,12 +31,7 @@ function App() {
         />
         <Route
           path="/tripcontainer"
-          render={() => (
-            <TripContainer              
-              data={data}
-              refetch={refetch}
-            />
-          )}
+          render={() => <TripContainer data={data} refetch={refetch} />}
         ></Route>
         <Route
           exact

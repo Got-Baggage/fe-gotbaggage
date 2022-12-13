@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-function TripCard({ tripName, category, traveler, id, image, handleDelete, handleCardDetail }) {
+function TripCard({ tripName, traveler, id, image, handleDelete }) {
   return (
     <article className="trip-card">
       <div className="card-details">
@@ -17,18 +17,10 @@ function TripCard({ tripName, category, traveler, id, image, handleDelete, handl
         >
           🗑️
         </button>
-
-        {/* <button
-            onClick={(e) => {
-              handleCardDetail(id);
-            }}
-          >
-            View List
-          </button> */}
       </div>
       <div className="card-image-container">
         <img className="card-image" src={image} alt="trip photograph" />
-      </div>      
+      </div>
     </article>
   );
 }

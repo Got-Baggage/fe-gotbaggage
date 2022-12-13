@@ -106,7 +106,7 @@ describe('trip creation form', () => {
     cy.get('.question').contains('Who is this list for?');
     cy.get('input').type('Cypress');
     cy.get('.submit-button').should('exist').click();
-    cy.get('.question').contains('What type of trip is this?');
+    cy.get('.question').contains('What type of trip is this?');    
     cy.get('.dropdown').select('beach');
     cy.get('.submit-button').should('exist').click();
   });
