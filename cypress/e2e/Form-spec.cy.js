@@ -14,7 +14,7 @@ describe('trip creation form', () => {
 
   it('prompts the user to pick a trip name, enter who the list will be for, and select a trip type', () => {
     cy.get('form')
-      cy.get('.question').contains('What would you like to call this trip? (For example: "January Mexico trip")' );
+    cy.get('.question').contains('What would you like to call this trip? (For example: "January Mexico trip")' );
     cy.get('input').type("my test vacation")
     cy.get('.submit-button').should('exist').click()
     cy.get('.question').contains('Who is this list for?');
@@ -96,10 +96,4 @@ describe('trip creation form error handling', () => {
     cy.get('input').should('have.value', 'my test trip')
   })
 
-  // it('should not allow a user to submit only spaces to a question', () => {
-  //   cy.get('input').type('     ')
-  //   cy.get('.submit-button').should('be.disabled')
-  // })
-
-  
 })

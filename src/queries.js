@@ -1,18 +1,18 @@
 // import React from 'react'
 import { gql, useQuery } from '@apollo/client';
 
-const GET_ESSENTIALS = gql`
-  query {
-    essentialItems {
-      name
-      id
-    }
-    itemsByCategory(category: 3) {
-      name
-      id
-    }
-  }
-`;
+// const GET_ESSENTIALS = gql`
+//   query {
+//     essentialItems {
+//       name
+//       id
+//     }
+//     itemsByCategory(category: 3) {
+//       name
+//       id
+//     }
+//   }
+// `;
 
 const GET_CATEGORIES = gql`
   query {
@@ -111,10 +111,10 @@ export const GET_ALL_TRIPS = gql`
 `;
 
 
-export const GetEssentials = () => {
-  const { data, error, loading } = useQuery(GET_ESSENTIALS);
-  return { data, error, loading };
-};
+// export const GetEssentials = () => {
+//   const { data, error, loading } = useQuery(GET_ESSENTIALS);
+//   return { data, error, loading };
+// };
 
 export const GetCategories = () => {
   const { data, error, loading } = useQuery(GET_CATEGORIES);

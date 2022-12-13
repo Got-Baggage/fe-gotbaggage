@@ -82,15 +82,16 @@ function ListDetails({ tripId }) {
   }
 
   // const toggleCreatedItemsMessage = () => {
-  //  if (!data.itemsByTrip.includes('null')) {
-  //   return ' '
-  //  } else if (data.itemsByTrip.includes('null')){
-  //   return "TEST"
+  //  if (!data.itemsByTrip.category === null) {
+  //   return <p>testing</p>
+  //  } else if (data.itemsByTrip.category === null){
+  //   return <p>test </p>
   //  }
   // }
 
  
   const returnedEssentials = () => {
+    console.log(data)
     if (!data) {
       return <p>no data</p>;
     }
@@ -105,7 +106,7 @@ function ListDetails({ tripId }) {
           <button
             className="delete-item-button"
             style={{visibility: isVisible ? 'visible' : 'hidden'}}
-            onClick={(e) => {
+            onClick={() => {
               handleItemDelete(item.id);
             }}
           >
@@ -116,7 +117,6 @@ function ListDetails({ tripId }) {
     });
   };
     const returnedCreatedItems = () => {
-      console.log(data);
       if (!data) {
         return <p>no data</p>;
       } 
@@ -131,7 +131,7 @@ function ListDetails({ tripId }) {
             <button
               className="delete-item-button"
               style={{ visibility: isVisible ? "visible" : "hidden" }}
-              onClick={(e) => {
+              onClick={() => {
                 handleItemDelete(item.id);
               }}
             >
@@ -144,7 +144,6 @@ function ListDetails({ tripId }) {
 
   const returnedCategories = () => {
     if (!data) {
-      console.log('test', data)
       return <p>no data</p>;
     }
     const essentials = data.itemsByTrip.filter(
@@ -158,7 +157,7 @@ function ListDetails({ tripId }) {
           <button
             className="delete-item-button"
             style={{ visibility: isVisible ? "visible" : "hidden" }}
-            onClick={(e) => {
+            onClick={() => {
               handleItemDelete(item.id);
             }}
           >
