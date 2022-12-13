@@ -1,1 +1,0 @@
-{"processes":{"3464f0b5-d090-4584-a54e-124a67d1e6d6":{"parent":null,"children":["debf626b-ec7b-4f8a-bc93-8de7f9f6f661"]},"debf626b-ec7b-4f8a-bc93-8de7f9f6f661":{"parent":"3464f0b5-d090-4584-a54e-124a67d1e6d6","children":[]}},"files":{"/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/cypress.config.js":["debf626b-ec7b-4f8a-bc93-8de7f9f6f661"]},"externalIds":{}}
