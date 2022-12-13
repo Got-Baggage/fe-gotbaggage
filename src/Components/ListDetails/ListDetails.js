@@ -7,7 +7,6 @@ import { useQuery, useMutation } from "@apollo/client";
 function ListDetails({ tripId }) {
   const [isVisible, setIsVisible] = useState(false)
   const [addItemIsVisible, setAddItemIsVisible] = useState(false)
-  // const [createItemIsVisible, setCreateItemIsVisible] = useState(false)
   const [name, setName] = useState('') 
 
 
@@ -60,11 +59,6 @@ function ListDetails({ tripId }) {
     setAddItemIsVisible(current => !current)
   }
 
-  // const createItemToggle = (e) => {
-  //   e.preventDefault()
-  //   setCreateItemIsVisible(current => !current)
-  // }
-
   const toggleEditButtonText = () => {
     if (isVisible) {
       return "Done"
@@ -81,15 +75,7 @@ function ListDetails({ tripId }) {
     }
   }
 
-  // const toggleCreatedItemsMessage = () => {
-  //  if (!data.itemsByTrip.category === null) {
-  //   return <p>testing</p>
-  //  } else if (data.itemsByTrip.category === null){
-  //   return <p>test </p>
-  //  }
-  // }
-
- 
+  
   const returnedEssentials = () => {
     console.log(data)
     if (!data) {
@@ -101,8 +87,10 @@ function ListDetails({ tripId }) {
     return essentials.map((item) => {
       return (
         <label className="list-label" key={item.id}>
-          <input type="checkbox" className="list-checkbox" />
-          <ul key={item.id}>{item.name}</ul>
+          <input aria-label='checkbox input' type="checkbox" className="list-checkbox" />
+          <ul key={item.id}>
+            <li>{item.name}</li>
+          </ul>
           <button
             className="delete-item-button"
             style={{visibility: isVisible ? 'visible' : 'hidden'}}
@@ -126,8 +114,10 @@ function ListDetails({ tripId }) {
       return essentials.map((item) => {
         return (
           <label className="list-label" key={item.id}>
-            <input type="checkbox" className="list-checkbox" />
-            <ul key={item.id}>{item.name}</ul>
+            <input aria-label='checkbox input' type="checkbox" className="list-checkbox" />
+            <ul key={item.id}>
+              <li>{item.name}</li>
+            </ul>
             <button
               className="delete-item-button"
               style={{ visibility: isVisible ? "visible" : "hidden" }}
@@ -142,6 +132,7 @@ function ListDetails({ tripId }) {
       });
     };
 
+
   const returnedCategories = () => {
     if (!data) {
       return <p>no data</p>;
@@ -152,8 +143,10 @@ function ListDetails({ tripId }) {
     return essentials.map((item) => {
       return (
         <label className="list-label" key={item.id}>
-          <input type="checkbox" className="list-checkbox" />
-          <ul key={item.id}>{item.name}</ul>
+          <input aria-label='checkbox input' type="checkbox" className="list-checkbox" />
+          <ul key={item.id}>
+            <li>{item.name}</li>
+          </ul>
           <button
             className="delete-item-button"
             style={{ visibility: isVisible ? "visible" : "hidden" }}
@@ -187,6 +180,7 @@ function ListDetails({ tripId }) {
         style={{ visibility: addItemIsVisible ? "visible" : "hidden" }}
       >
         <input
+          aria-label='text input field'
           type="text"
           className="add-item-input"
           placeholder="Add an item to include"
@@ -206,7 +200,6 @@ function ListDetails({ tripId }) {
         <div className='added-items-container'>
         <h1 className='added-items-title'>Add Additional Items:</h1>
         <div>{returnedCreatedItems()}</div>
-        {/* <p>{toggleCreatedItemsMessage()}</p> */}
         </div>
       </div>
     </section >
