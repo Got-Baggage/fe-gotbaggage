@@ -73,7 +73,7 @@ describe('Items page', () => {
     cy.get('.added-items-container > div > .list-label > .delete-item-button')
       .contains('🗑')
       .click();
-    cy.intercept('POST','https://be-gotbaggage.fly.dev/graphql', {
+    cy.intercept('https://be-gotbaggage.fly.dev/graphql', {
       fixture: 'deleteItem.json',
     }).as('deleteData');
     cy.get('.added-items-container > div > .list-label > ul').should(

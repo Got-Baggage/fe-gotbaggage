@@ -4,7 +4,7 @@
    Need help deciding what to pack for your trip?
   </h4>
 
-This application has prebuilt packing list for your next adventure. 
+This application has prebuilt packing list's for your next adventure. 
 
 ## Table of Contents
 - [Overview](#Overview)
