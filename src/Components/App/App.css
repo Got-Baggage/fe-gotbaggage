@@ -84,6 +84,7 @@ select:focus {
 
 .homepage-button {
   margin: 5px;
+  color: #0b4f5b!important;
 }
 
 .submit-button,
@@ -223,6 +224,10 @@ ul {
   padding-left: 8px;
 }
 
+li {
+  list-style: none;
+}
+
 .essential-items {
   display: flex;
   align-items: center;
@@ -288,6 +293,11 @@ ul {
 
 .add-button {
   margin-left: 2%;
+  color: #0b4f5b!important;
+}
+
+.edit-button{
+  color: #0b4f5b!important;
 }
 
 .card-image-container {
