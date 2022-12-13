@@ -88,7 +88,8 @@ function ListDetails({ tripId }) {
   //   return "TEST"
   //  }
   // }
-  
+
+ 
   const returnedEssentials = () => {
     if (!data) {
       return <p>no data</p>;
@@ -168,11 +169,12 @@ function ListDetails({ tripId }) {
     });
   };
 
-
+  
 
   return (
     <section className="list-details-view">
       <Nav />
+      
       <div className="list-buttons">
         <button className="edit-button" onClick={toggleEdit}>
           {toggleEditButtonText()}
@@ -208,7 +210,7 @@ function ListDetails({ tripId }) {
         {/* <p>{toggleCreatedItemsMessage()}</p> */}
         </div>
       </div>
-    </section>
+    </section >
   );
 }
 
