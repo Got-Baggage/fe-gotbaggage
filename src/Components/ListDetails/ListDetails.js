@@ -7,6 +7,7 @@ import { useQuery, useMutation } from "@apollo/client";
 function ListDetails({ tripId }) {
   const [isVisible, setIsVisible] = useState(false)
   const [addItemIsVisible, setAddItemIsVisible] = useState(false)
+  // const [createItemIsVisible, setCreateItemIsVisible] = useState(false)
   const [name, setName] = useState('') 
 
 
@@ -59,6 +60,11 @@ function ListDetails({ tripId }) {
     setAddItemIsVisible(current => !current)
   }
 
+  // const createItemToggle = (e) => {
+  //   e.preventDefault()
+  //   setCreateItemIsVisible(current => !current)
+  // }
+
   const toggleEditButtonText = () => {
     if (isVisible) {
       return "Done"
@@ -75,8 +81,15 @@ function ListDetails({ tripId }) {
     }
   }
 
+  // const toggleCreatedItemsMessage = () => {
+  //  if (!data.itemsByTrip.includes('null')) {
+  //   return ' '
+  //  } else if (data.itemsByTrip.includes('null')){
+  //   return "TEST"
+  //  }
+  // }
+  
   const returnedEssentials = () => {
-    console.log(data);
     if (!data) {
       return <p>no data</p>;
     }
@@ -129,8 +142,8 @@ function ListDetails({ tripId }) {
     };
 
   const returnedCategories = () => {
-    console.log(data);
     if (!data) {
+      console.log('test', data)
       return <p>no data</p>;
     }
     const essentials = data.itemsByTrip.filter(
@@ -189,8 +202,11 @@ function ListDetails({ tripId }) {
         </div>
         <h1>Activity Items:</h1>
         <div>{returnedCategories()}</div>
-        <h1 className='added-items-title'>Your Added Items:</h1>
+        <div className='added-items-container'>
+        <h1 className='added-items-title'>Add Additional Items:</h1>
         <div>{returnedCreatedItems()}</div>
+        {/* <p>{toggleCreatedItemsMessage()}</p> */}
+        </div>
       </div>
     </section>
   );
