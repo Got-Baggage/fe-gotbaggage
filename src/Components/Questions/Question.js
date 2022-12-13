@@ -76,6 +76,7 @@ function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
         <div className="question-container">
           <h2 className="question">{questionsData[currentQuestionIndex]}</h2>
           <select
+            aria-label="dropdown field"
             className="dropdown"
             onChange={(e) => {
               setCurrentResponse(e.target.value);
@@ -112,6 +113,7 @@ function Question({ submitAnswer, removeAnswer, responses, submitForm }) {
         <div className="question-container">
           <h2 className="question">{questionsData[currentQuestionIndex]}</h2>
           <input
+            aria-label="text input field"
             type="text"
             value={currentResponse}
             onChange={(e) => {
