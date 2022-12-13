@@ -76,6 +76,7 @@ describe('Items page', () => {
     cy.intercept('https://be-gotbaggage.fly.dev/graphql', {
       fixture: 'deleteItem.json',
     }).as('deleteData');
+    cy.wait(500)
     cy.get('.added-items-container > div > .list-label > ul').should(
       'not.exist'
     );
