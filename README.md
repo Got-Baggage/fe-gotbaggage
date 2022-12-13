@@ -33,8 +33,11 @@ This was a group CapStone project with a combined Front End and Back End team. F
 * Focus on communication between front-end and back-end teams in order to complete and deploy features that have been outlined by the project spec
 
 ## Features:
-  * As a user
-
+  * As a user I can Create a Trip to view a predetermined list of packing essentials and activity items.
+  * As a user I can view a list of created trips.
+  * As a user I can view an itemized list of packing essentials and activity items.
+  * As a user I can delete items in my item list.
+  * As a user I can add items to my item list.
 
 ## Technologies
 
@@ -117,3 +120,6 @@ This project was tested with [Cypress](https://docs.cypress.io/guides/getting-st
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Future Directions
+* Extension - Build family member profiles with a login
+* Extension - Add destination with maps API
+* Extension - Edit an item
