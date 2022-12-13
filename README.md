@@ -10,7 +10,7 @@ This application has prebuilt packing list's for your next adventure.
 
 ## Table of Contents
 - [Overview](#Overview)
-- [Highlights](#Highlights)
+- [Features](#Features)
 - [Technologies](#Technologies)
 - [Links](#Links)
 - [ScreenShots](#ScreenShots)
