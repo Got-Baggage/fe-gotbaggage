@@ -1,6 +1,6 @@
 {
-  "/Users/huntermonroe/turing/Mod4/fe-gotbaggage/src/Components/Nav/Nav.js": {
-    "path": "/Users/huntermonroe/turing/Mod4/fe-gotbaggage/src/Components/Nav/Nav.js",
+  "/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/src/Components/Nav/Nav.js": {
+    "path": "/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/src/Components/Nav/Nav.js",
     "statementMap": {
       "0": {
         "start": {
@@ -41,17 +41,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 170
+      "0": 83
     },
     "f": {
-      "0": 170
+      "0": 83
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "a408fc9a141ebe8fc2645d16d6af2f9ae26dc7bb"
+    "hash": "2d62a551d15bc1969632d615aa3cd7406c804836"
   },
-  "/Users/huntermonroe/turing/Mod4/fe-gotbaggage/src/questionsData.js": {
-    "path": "/Users/huntermonroe/turing/Mod4/fe-gotbaggage/src/questionsData.js",
+  "/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/src/questionsData.js": {
+    "path": "/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/src/questionsData.js",
     "statementMap": {
       "0": {
         "start": {
@@ -77,16 +77,16 @@
     "fnMap": {},
     "branchMap": {},
     "s": {
-      "0": 37,
-      "1": 37
+      "0": 15,
+      "1": 15
     },
     "f": {},
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "d8b581b1aa92315c270ad397e71545d5326f144a"
+    "hash": "0534221dc1260a672d19fe41b4ea60615881d506"
   },
-  "/Users/huntermonroe/turing/Mod4/fe-gotbaggage/src/queries.js": {
-    "path": "/Users/huntermonroe/turing/Mod4/fe-gotbaggage/src/queries.js",
+  "/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/src/queries.js": {
+    "path": "/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/src/queries.js",
     "statementMap": {
       "0": {
         "start": {
@@ -271,30 +271,30 @@
     },
     "branchMap": {},
     "s": {
-      "0": 37,
-      "1": 37,
-      "2": 37,
-      "3": 37,
-      "4": 37,
-      "5": 37,
-      "6": 37,
-      "7": 37,
-      "8": 316,
-      "9": 316,
-      "10": 37,
-      "11": 91,
-      "12": 91
+      "0": 15,
+      "1": 15,
+      "2": 15,
+      "3": 15,
+      "4": 15,
+      "5": 15,
+      "6": 15,
+      "7": 15,
+      "8": 303,
+      "9": 303,
+      "10": 15,
+      "11": 54,
+      "12": 54
     },
     "f": {
-      "0": 316,
-      "1": 91
+      "0": 303,
+      "1": 54
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "4db81d257194274287820f197e87ca6da4879f0d"
+    "hash": "dafeac9a848ed92dfa2869cfdb6af7e82c612478"
   },
-  "/Users/huntermonroe/turing/Mod4/fe-gotbaggage/src/Components/Questions/Question.js": {
-    "path": "/Users/huntermonroe/turing/Mod4/fe-gotbaggage/src/Components/Questions/Question.js",
+  "/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/src/Components/Questions/Question.js": {
+    "path": "/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/src/Components/Questions/Question.js",
     "statementMap": {
       "0": {
         "start": {
@@ -1482,77 +1482,77 @@
       }
     },
     "s": {
-      "0": 316,
-      "1": 316,
-      "2": 316,
-      "3": 316,
-      "4": 316,
+      "0": 303,
+      "1": 303,
+      "2": 303,
+      "3": 303,
+      "4": 303,
       "5": 16,
       "6": 16,
       "7": 0,
       "8": 16,
       "9": 16,
-      "10": 316,
-      "11": 2,
-      "12": 2,
-      "13": 2,
-      "14": 2,
-      "15": 2,
-      "16": 2,
-      "17": 316,
-      "18": 2,
-      "19": 316,
-      "20": 28,
-      "21": 28,
-      "22": 28,
+      "10": 303,
+      "11": 1,
+      "12": 1,
+      "13": 1,
+      "14": 1,
+      "15": 1,
+      "16": 1,
+      "17": 303,
+      "18": 1,
+      "19": 303,
+      "20": 27,
+      "21": 27,
+      "22": 27,
       "23": 8,
       "24": 8,
-      "25": 20,
-      "26": 20,
-      "27": 20,
-      "28": 20,
-      "29": 316,
-      "30": 28,
-      "31": 316,
-      "32": 266,
-      "33": 210,
-      "34": 316,
-      "35": 282,
-      "36": 52,
-      "37": 316,
-      "38": 282,
+      "25": 19,
+      "26": 19,
+      "27": 19,
+      "28": 19,
+      "29": 303,
+      "30": 27,
+      "31": 303,
+      "32": 249,
+      "33": 194,
+      "34": 303,
+      "35": 265,
+      "36": 50,
+      "37": 303,
+      "38": 265,
       "39": 16,
       "40": 8,
       "41": 0,
       "42": 8,
-      "43": 266,
-      "44": 216,
-      "45": 2,
-      "46": 20,
-      "47": 316,
-      "48": 316,
-      "49": 282,
-      "50": 34,
-      "51": 316
+      "43": 249,
+      "44": 204,
+      "45": 1,
+      "46": 19,
+      "47": 303,
+      "48": 303,
+      "49": 265,
+      "50": 38,
+      "51": 303
     },
     "f": {
-      "0": 316,
+      "0": 303,
       "1": 16,
       "2": 16,
-      "3": 2,
-      "4": 2,
-      "5": 28,
-      "6": 28,
-      "7": 266,
-      "8": 282,
-      "9": 282,
+      "3": 1,
+      "4": 1,
+      "5": 27,
+      "6": 27,
+      "7": 249,
+      "8": 265,
+      "9": 265,
       "10": 8,
       "11": 0,
       "12": 8,
-      "13": 216,
-      "14": 2,
-      "15": 20,
-      "16": 316
+      "13": 204,
+      "14": 1,
+      "15": 19,
+      "16": 303
     },
     "b": {
       "0": [
@@ -1561,34 +1561,34 @@
       ],
       "1": [
         8,
-        20
+        19
       ],
       "2": [
-        210,
-        56
+        194,
+        55
       ],
       "3": [
-        52,
-        230
+        50,
+        215
       ],
       "4": [
-        282,
-        230
+        265,
+        215
       ],
       "5": [
         16,
-        266
+        249
       ],
       "6": [
-        282,
-        34
+        265,
+        38
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "1a109cbaae3cd22851123aaaa856e1a427195a31"
+    "hash": "7096c2bcc1fd80fc8d6e54e7d0d4ae2ea096f8c1"
   },
-  "/Users/huntermonroe/turing/Mod4/fe-gotbaggage/src/Components/Form/Form.js": {
-    "path": "/Users/huntermonroe/turing/Mod4/fe-gotbaggage/src/Components/Form/Form.js",
+  "/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/src/Components/Form/Form.js": {
+    "path": "/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/src/Components/Form/Form.js",
     "statementMap": {
       "0": {
         "start": {
@@ -1946,43 +1946,43 @@
       }
     },
     "s": {
-      "0": 76,
-      "1": 76,
-      "2": 46,
+      "0": 79,
+      "1": 79,
+      "2": 42,
       "3": 8,
-      "4": 76,
-      "5": 76,
+      "4": 79,
+      "5": 79,
       "6": 8,
-      "7": 76,
+      "7": 79,
       "8": 8,
       "9": 8,
       "10": 8,
-      "11": 76,
-      "12": 28,
-      "13": 76,
-      "14": 2,
-      "15": 2,
-      "16": 76
+      "11": 79,
+      "12": 27,
+      "13": 79,
+      "14": 1,
+      "15": 1,
+      "16": 79
     },
     "f": {
-      "0": 76,
-      "1": 46,
+      "0": 79,
+      "1": 42,
       "2": 8,
       "3": 8,
-      "4": 28,
-      "5": 2
+      "4": 27,
+      "5": 1
     },
     "b": {
       "0": [
         8,
-        38
+        34
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "b05950c30ad980cc18c8f633fea8afd05ed8043b"
+    "hash": "bfe15a5fde6ceeed14c1270be7adf1e28197a131"
   },
-  "/Users/huntermonroe/turing/Mod4/fe-gotbaggage/src/Components/ErrorPage/ErrorPage.js": {
-    "path": "/Users/huntermonroe/turing/Mod4/fe-gotbaggage/src/Components/ErrorPage/ErrorPage.js",
+  "/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/src/Components/ErrorPage/ErrorPage.js": {
+    "path": "/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/src/Components/ErrorPage/ErrorPage.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2023,17 +2023,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 5
+      "0": 0
     },
     "f": {
-      "0": 5
+      "0": 0
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "fce096998f90086632d294db5b91160854d55ce6"
+    "hash": "361167d96f6cfe27c1aaf60b68f79bc00d5c4ffb"
   },
-  "/Users/huntermonroe/turing/Mod4/fe-gotbaggage/src/Components/HomePage/HomePage.js": {
-    "path": "/Users/huntermonroe/turing/Mod4/fe-gotbaggage/src/Components/HomePage/HomePage.js",
+  "/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/src/Components/HomePage/HomePage.js": {
+    "path": "/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/src/Components/HomePage/HomePage.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2074,17 +2074,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 38
+      "0": 23
     },
     "f": {
-      "0": 38
+      "0": 23
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "f17453dd10b1cd31d4eadf22ea958275e2d5c77f"
+    "hash": "6b8a7c0893b16c0d5fc76aded3d31ea4f2b59706"
   },
-  "/Users/huntermonroe/turing/Mod4/fe-gotbaggage/src/Components/TripCard/TripCard.js": {
-    "path": "/Users/huntermonroe/turing/Mod4/fe-gotbaggage/src/Components/TripCard/TripCard.js",
+  "/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/src/Components/TripCard/TripCard.js": {
+    "path": "/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/src/Components/TripCard/TripCard.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2159,19 +2159,19 @@
     },
     "branchMap": {},
     "s": {
-      "0": 36,
-      "1": 2
+      "0": 8,
+      "1": 0
     },
     "f": {
-      "0": 36,
-      "1": 2
+      "0": 8,
+      "1": 0
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "01ff6ba95e83bdb4ba017d050f1280e35f6acfef"
+    "hash": "64449e6ab9520222f13c04e84df4d0fbc31e636e"
   },
-  "/Users/huntermonroe/turing/Mod4/fe-gotbaggage/src/Components/TripContainer/TripContainer.js": {
-    "path": "/Users/huntermonroe/turing/Mod4/fe-gotbaggage/src/Components/TripContainer/TripContainer.js",
+  "/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/src/Components/TripContainer/TripContainer.js": {
+    "path": "/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/src/Components/TripContainer/TripContainer.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2421,35 +2421,35 @@
       }
     },
     "s": {
-      "0": 33,
-      "1": 33,
-      "2": 2,
-      "3": 2,
-      "4": 33,
-      "5": 33,
-      "6": 33,
-      "7": 12,
-      "8": 21,
-      "9": 36,
-      "10": 33
+      "0": 4,
+      "1": 4,
+      "2": 0,
+      "3": 0,
+      "4": 4,
+      "5": 4,
+      "6": 4,
+      "7": 0,
+      "8": 4,
+      "9": 8,
+      "10": 4
     },
     "f": {
-      "0": 33,
-      "1": 2,
-      "2": 33,
-      "3": 36
+      "0": 4,
+      "1": 0,
+      "2": 4,
+      "3": 8
     },
     "b": {
       "0": [
-        12,
-        21
+        0,
+        4
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "292b3b5ff7cf2d3c0cb5d25dd5d91605b8d46548"
+    "hash": "e3501715fcea51c1210c0b85b469581b87e27b77"
   },
-  "/Users/huntermonroe/turing/Mod4/fe-gotbaggage/src/Components/ListDetails/ListDetails.js": {
-    "path": "/Users/huntermonroe/turing/Mod4/fe-gotbaggage/src/Components/ListDetails/ListDetails.js",
+  "/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/src/Components/ListDetails/ListDetails.js": {
+    "path": "/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/src/Components/ListDetails/ListDetails.js",
     "statementMap": {
       "0": {
         "start": {
@@ -3915,135 +3915,135 @@
       }
     },
     "s": {
-      "0": 56,
-      "1": 56,
-      "2": 56,
-      "3": 56,
-      "4": 56,
-      "5": 56,
-      "6": 56,
-      "7": 3,
-      "8": 56,
-      "9": 56,
-      "10": 2,
-      "11": 2,
-      "12": 2,
-      "13": 56,
-      "14": 2,
-      "15": 2,
-      "16": 2,
-      "17": 2,
-      "18": 56,
-      "19": 5,
-      "20": 5,
-      "21": 5,
-      "22": 56,
-      "23": 56,
-      "24": 8,
-      "25": 48,
-      "26": 56,
-      "27": 56,
-      "28": 36,
-      "29": 20,
-      "30": 56,
-      "31": 56,
-      "32": 56,
-      "33": 5,
-      "34": 51,
-      "35": 164,
-      "36": 51,
-      "37": 102,
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0,
+      "24": 0,
+      "25": 0,
+      "26": 0,
+      "27": 0,
+      "28": 0,
+      "29": 0,
+      "30": 0,
+      "31": 0,
+      "32": 0,
+      "33": 0,
+      "34": 0,
+      "35": 0,
+      "36": 0,
+      "37": 0,
       "38": 0,
-      "39": 56,
-      "40": 56,
-      "41": 5,
-      "42": 51,
-      "43": 164,
-      "44": 51,
-      "45": 11,
-      "46": 2,
-      "47": 56,
-      "48": 56,
-      "49": 5,
-      "50": 51,
-      "51": 164,
-      "52": 51,
-      "53": 51,
+      "39": 0,
+      "40": 0,
+      "41": 0,
+      "42": 0,
+      "43": 0,
+      "44": 0,
+      "45": 0,
+      "46": 0,
+      "47": 0,
+      "48": 0,
+      "49": 0,
+      "50": 0,
+      "51": 0,
+      "52": 0,
+      "53": 0,
       "54": 0,
-      "55": 56,
-      "56": 24
+      "55": 0,
+      "56": 0
     },
     "f": {
-      "0": 56,
-      "1": 3,
-      "2": 2,
-      "3": 2,
-      "4": 2,
-      "5": 5,
-      "6": 5,
-      "7": 56,
-      "8": 56,
-      "9": 56,
-      "10": 164,
-      "11": 102,
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
       "12": 0,
-      "13": 56,
-      "14": 164,
-      "15": 11,
-      "16": 2,
-      "17": 56,
-      "18": 164,
-      "19": 51,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
       "20": 0,
-      "21": 24
+      "21": 0
     },
     "b": {
       "0": [
-        8,
-        48
+        0,
+        0
       ],
       "1": [
-        36,
-        20
+        0,
+        0
       ],
       "2": [
-        5,
-        51
+        0,
+        0
       ],
       "3": [
-        16,
-        86
+        0,
+        0
       ],
       "4": [
-        5,
-        51
+        0,
+        0
       ],
       "5": [
-        6,
-        5
+        0,
+        0
       ],
       "6": [
-        5,
-        51
+        0,
+        0
       ],
       "7": [
-        164,
-        62
+        0,
+        0
       ],
       "8": [
-        8,
-        43
+        0,
+        0
       ],
       "9": [
-        36,
-        20
+        0,
+        0
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "a772bb9fe83cad92fab6a747b2c16932d3758725"
+    "hash": "c59d97bc39702e61a3e7d66bf6ef0e9720bc188c"
   },
-  "/Users/huntermonroe/turing/Mod4/fe-gotbaggage/src/Components/App/App.js": {
-    "path": "/Users/huntermonroe/turing/Mod4/fe-gotbaggage/src/Components/App/App.js",
+  "/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/src/Components/App/App.js": {
+    "path": "/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/src/Components/App/App.js",
     "statementMap": {
       "0": {
         "start": {
@@ -4318,32 +4318,32 @@
     },
     "branchMap": {},
     "s": {
-      "0": 91,
-      "1": 91,
+      "0": 54,
+      "1": 54,
       "2": 8,
-      "3": 91,
-      "4": 91,
-      "5": 38,
+      "3": 54,
+      "4": 54,
+      "5": 23,
       "6": 46,
-      "7": 29,
-      "8": 5,
-      "9": 5
+      "7": 4,
+      "8": 0,
+      "9": 0
     },
     "f": {
-      "0": 91,
+      "0": 54,
       "1": 8,
-      "2": 38,
+      "2": 23,
       "3": 46,
-      "4": 29,
-      "5": 5,
-      "6": 5
+      "4": 4,
+      "5": 0,
+      "6": 0
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "5a38a0e162f40efcaae8625bdab841dfe446840b"
+    "hash": "facdbd10641386f4e2627bf77db095de2ad843ee"
   },
-  "/Users/huntermonroe/turing/Mod4/fe-gotbaggage/src/reportWebVitals.js": {
-    "path": "/Users/huntermonroe/turing/Mod4/fe-gotbaggage/src/reportWebVitals.js",
+  "/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/src/reportWebVitals.js": {
+    "path": "/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/src/reportWebVitals.js",
     "statementMap": {
       "0": {
         "start": {
@@ -4384,17 +4384,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 37
+      "0": 15
     },
     "f": {
-      "0": 37
+      "0": 15
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "43ae1aa90ecfb4c50cb6cf1057e080ce173fa3a9"
+    "hash": "4f37f4b4d7f302e24cd9a24219e489efc263cec6"
   },
-  "/Users/huntermonroe/turing/Mod4/fe-gotbaggage/src/index.js": {
-    "path": "/Users/huntermonroe/turing/Mod4/fe-gotbaggage/src/index.js",
+  "/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/src/index.js": {
+    "path": "/Users/hazelpablo/turing_work/4mod/fe-gotbaggage/src/index.js",
     "statementMap": {
       "0": {
         "start": {
@@ -4440,14 +4440,14 @@
     "fnMap": {},
     "branchMap": {},
     "s": {
-      "0": 37,
-      "1": 37,
-      "2": 37,
-      "3": 37
+      "0": 15,
+      "1": 15,
+      "2": 15,
+      "3": 15
     },
     "f": {},
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "b555fa9340663a1c2cc51f1faa766cd382081f65"
+    "hash": "11849a002cf69cdb642681b5e65110ade5fe1fe8"
   }
 }

@@ -95,5 +95,4 @@
 //     cy.get('.back-button').click()
 //     cy.get('input').should('have.value', 'my test trip')
 //   })
-
 // })
