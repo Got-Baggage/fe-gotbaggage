@@ -2,9 +2,9 @@
     "data": {
       "tripCreate": {
         "trip": {
-          "name": "Baggage Trip",
-          "category": "international",
-          "traveler": "Stephen",
+          "name": "Beth's Ski Trip",
+          "category": "beach",
+          "traveler": "Beth",
           "image": "https://www.lonestar.edu/images/internationalTravel.jpg"
         }
       }

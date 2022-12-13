@@ -38,6 +38,9 @@ describe('Items page', () => {
     cy.get(':nth-child(1) > .card-details > a').click();
   });
   it('Should be able to see a list of items for the trip and buttons', () => {
+     cy.intercept('https://be-gotbaggage.fly.dev/graphql', {
+       fixture: 'listDetails.json',
+     }).as('list details');
     cy.get('.nav-logo').should('exist');
     cy.get('.edit-button').should('exist');
     cy.get('.add-button').should('exist');
@@ -133,6 +136,9 @@ describe('trip creation form', () => {
     cy.get('.submit-button').click();
     cy.get('.dropdown').select('beach');
     cy.get('.submit-button').click();
+    cy.intercept('https://be-gotbaggage.fly.dev/graphql', {
+      fixture: 'create-trip.json',
+    }).as('createdTrips');
     cy.get('.view-trips-button').click();
     cy.url().should('eq', 'http://localhost:3000/tripcontainer');
     cy.get('.trip-card').should('be.visible');
