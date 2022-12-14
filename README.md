@@ -51,7 +51,7 @@ This was a group CapStone project with a combined Front End and Back End team. F
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 
 ## Links
-* Deployed Project: [Got Baggage](https://fe-gotbaggage-je0to5o3l-hpablo08.vercel.app/)
+* Deployed Project: [Got Baggage](https://fe-gotbaggage.vercel.app/)
 * Backend: [BE-got-Baggage](https://be-gotbaggage.fly.dev/graphql)
 * FE Deployed using ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 * Wireframe: [Miro](https://miro.com/app/board/uXjVP-8lUxU=/?share_link_id=671687208577)
