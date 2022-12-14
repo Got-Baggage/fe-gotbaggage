@@ -76,9 +76,6 @@ describe("Items page", () => {
     cy.intercept("https://be-gotbaggage.fly.dev/graphql", {
       fixture: "deleteItem.json",
     }).as("deleteData");
-    // cy.get(".added-items-container > div > .list-label > ul").should(
-    //   "not.exist"
-    // );
   });
 });
 
@@ -143,7 +140,7 @@ describe("trip creation form", () => {
     cy.url().should("eq", "http://localhost:3000/tripcontainer");
     cy.get(".trip-card").should("be.visible");
     cy.get(".trip-card").first().should("include.text", "Beth's Ski Trip");
-  }); 
+  });
 });
 
 describe("trip creation form error handling", () => {
