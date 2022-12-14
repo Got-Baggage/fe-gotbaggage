@@ -142,22 +142,8 @@ describe("trip creation form", () => {
     cy.get(".view-trips-button").click();
     cy.url().should("eq", "http://localhost:3000/tripcontainer");
     cy.get(".trip-card").should("be.visible");
-  });
-
-  it("should show the newly-created trip as a trip card", () => {
-    cy.intercept("https://be-gotbaggage.fly.dev/graphql", {
-      fixture: "trips.json",
-    }).as("trips");
-    cy.get("form");
-    cy.get("input").type("Beth's Ski Trip");
-    cy.get(".submit-button").click();
-    cy.get("input").type("Beth");
-    cy.get(".submit-button").click();
-    cy.get(".dropdown").select("beach");
-    cy.get(".submit-button").click();
-    cy.get(".view-trips-button").click();
     cy.get(".trip-card").first().should("include.text", "Beth's Ski Trip");
-  });
+  }); 
 });
 
 describe("trip creation form error handling", () => {
