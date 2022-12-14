@@ -59,7 +59,7 @@ This was a group CapStone project with a combined Front End and Back End team. F
 ## Screenshots
 
 ![Form View](https://user-images.githubusercontent.com/106141130/207420529-f35c014b-8ecf-4d36-b910-be644e063f53.gif)
-
+## List of Packing Items
 ![List View](https://user-images.githubusercontent.com/106141130/207420567-4684a48f-1e0d-40b0-a359-1eae2fda1233.gif)
 
 <h3 align="center">Phone View</h3>
