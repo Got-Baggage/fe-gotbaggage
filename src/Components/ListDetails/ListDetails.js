@@ -30,6 +30,12 @@ function ListDetails({ tripId }) {
     });
   };
 
+  const clearItemInput = (e) => {
+    console.log("click")
+    e.preventDefault()
+    setName(" ");
+  };
+
   const [deleteItem] = useMutation(DELETE_ITEM, {
     onCompleted: refetch,
   });
@@ -188,8 +194,15 @@ function ListDetails({ tripId }) {
           className="add-item-input"
           placeholder="Add an item to include"
           onChange={(e) => setName(e.target.value)}
+          value={name}
         />
-        <button className="add-item-button" onClick={addSingleItem}>
+        <button
+          className="add-item-button"
+          onClick={(e) => {
+            addSingleItem();
+            clearItemInput(e);
+          }}
+        >
           <span>➕</span>
         </button>
       </div>
