@@ -1,18 +1,4 @@
-// import React from 'react'
 import { gql, useQuery } from '@apollo/client';
-
-// const GET_ESSENTIALS = gql`
-//   query {
-//     essentialItems {
-//       name
-//       id
-//     }
-//     itemsByCategory(category: 3) {
-//       name
-//       id
-//     }
-//   }
-// `;
 
 const GET_CATEGORIES = gql`
   query {
@@ -52,26 +38,6 @@ mutation ItemCreate($tripId: Int!, $itemName: String!) {
   }
 }`
 
-// mutation{
-//   itemCreate(input: {tripId: 1, itemName: "boss item"})
-//   {
-//     item{
-//       name
-//       id
-//     }
-//   }
-// }
-
-// const GET_SINGLE_TRIP = gql`
-//   {
-//     itemsByTrip(tripId: 1813) {
-//       name
-//       id
-//       category
-//     }
-//   }
-// `;
-
 const ADD_TRIP_MUTATION = gql`
   mutation TripCreate($name: String!, $category: String!, $traveler: String!) {
     tripCreate(
@@ -86,7 +52,6 @@ const ADD_TRIP_MUTATION = gql`
     }
   }
 `;
-
 
 const DELETE_TRIP = gql`
   mutation TripDelete($id: ID!) {
@@ -110,12 +75,6 @@ export const GET_ALL_TRIPS = gql`
   }
 `;
 
-
-// export const GetEssentials = () => {
-//   const { data, error, loading } = useQuery(GET_ESSENTIALS);
-//   return { data, error, loading };
-// };
-
 export const GetCategories = () => {
   const { data, error, loading } = useQuery(GET_CATEGORIES);
   return { data, error, loading };
@@ -125,11 +84,6 @@ export const GetAllTrips = () => {
   const { data, error, loading, refetch } = useQuery(GET_ALL_TRIPS);
   return { data, error, loading, refetch};
 };
-
-// export const ItemsByTrip = (id) => {
-//   const { data, error, loading } = useQuery(GET_SINGLE_TRIP);
-//   return { data, error, loading, id };
-// }
 
 export { DELETE_TRIP };
 export {DELETE_ITEM}
